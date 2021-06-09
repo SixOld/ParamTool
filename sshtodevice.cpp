@@ -10,8 +10,6 @@ sshToDevice::sshToDevice(QString ip, QWidget *parent) :
     m_ip = ip;
     QSsh::SshConnectionParameters argParameters;
     argParameters.host = ip;
-    argParameters.userName = "root";
-    argParameters.password = "hik_linux";
     argParameters.port = 22;
     argParameters.timeout = 5;
     argParameters.authenticationType = QSsh::SshConnectionParameters::AuthenticationTypePassword;
@@ -91,6 +89,8 @@ void sshToDevice::slotDataReceived()
 {
     QByteArray byteRecv = m_shell->readAllStandardOutput();
     QString strRecv = (byteRecv);
+    QRegExp re("\\x1b\\[[0-9]+(?:;[0-9]+){0,2}m");
+    strRecv.replace(re, "");
 //    if(strRecv.contains("password for")){
 //        m_shell->write(m_strPwd.toLatin1().data());
 //    }
@@ -106,3 +106,4 @@ void sshToDevice::on_lineEdit_Send_returnPressed()
     m_shell->write((ui->lineEdit_Send->text() + "\n").toUtf8());
     ui->lineEdit_Send->clear();
 }
+
