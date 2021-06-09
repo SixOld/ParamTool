@@ -10,6 +10,8 @@ public:
     void SetConfig(void);
     QString IP;
     int Port;
+    QString UserName;
+    QString PassWord;
 private:
     void getConfig(void);
 

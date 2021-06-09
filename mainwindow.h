@@ -18,8 +18,8 @@ public:
 
 private slots:
     void on_actionSSH_triggered();
-
     void on_pushButton_clicked();
+    void SaveSshPasswd(QString user, QString passwd);
 
 private:
     C_ParamSave m_param;

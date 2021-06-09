@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->lineEdit_ip->setText(m_param.IP);
     ui->lineEdit_port->setValidator(new QIntValidator(0, 65535, this));
     ui->lineEdit_port->setText(QString::number(m_param.Port));
+    
 }
 
 MainWindow::~MainWindow()
@@ -21,8 +22,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionSSH_triggered()
 {
-    sshToDevice* ssh = new sshToDevice(ui->lineEdit_ip->text());
+    sshToDevice* ssh = new sshToDevice(ui->lineEdit_ip->text(), m_param.UserName, m_param.PassWord);
     ssh->show();
+    connect(ssh, SIGNAL(sigSaveSshPasswd(QString, QString)), SLOT(SaveSshPasswd(QString, QString)));
 }
 
 
@@ -30,5 +32,12 @@ void MainWindow::on_pushButton_clicked()
 {
     m_param.IP = ui->lineEdit_ip->text();
     m_param.Port = ui->lineEdit_port->text().toInt();
+    m_param.SetConfig();
+}
+
+void MainWindow::SaveSshPasswd(QString user, QString passwd)
+{
+    m_param.UserName = user;
+    m_param.PassWord = passwd;
     m_param.SetConfig();
 }

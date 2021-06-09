@@ -6,6 +6,7 @@ CONFIG += c++11
 
 SOURCES += \
     ParamSave.cpp \
+    SshPasswdIn.cpp \
     main.cpp \
     mainwindow.cpp \
     sshtodevice.cpp
@@ -14,10 +15,12 @@ INCLUDEPATH += $$PWD/OpenSource/QSsh/include
 
 HEADERS += \
     ParamSave.h \
+    SshPasswdIn.h \
     mainwindow.h \
     sshtodevice.h
 
 FORMS += \
+    SshPasswdIn.ui \
     mainwindow.ui \
     sshtodevice.ui
 

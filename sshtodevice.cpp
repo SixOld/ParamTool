@@ -1,24 +1,20 @@
 #include "sshtodevice.h"
 #include "ui_sshtodevice.h"
+#include <QMessageBox>
 
-sshToDevice::sshToDevice(QString ip, QWidget *parent) :
+sshToDevice::sshToDevice(QString ip, QString user, QString passwd, QWidget *parent) :
     QWidget(parent),
     ui(new Ui::sshToDevice)
 {
     ui->setupUi(this);
-    setAttribute(Qt::WA_DeleteOnClose);
-    m_ip = ip;
-    QSsh::SshConnectionParameters argParameters;
-    argParameters.host = ip;
-    argParameters.port = 22;
-    argParameters.timeout = 5;
-    argParameters.authenticationType = QSsh::SshConnectionParameters::AuthenticationTypePassword;
-    if (m_pSshSocket == nullptr) {
-        m_pSshSocket = new QSsh::SshConnection(argParameters);
-        connect(m_pSshSocket, SIGNAL(connected()), SLOT(handleConnected()));
-        connect(m_pSshSocket, SIGNAL(error(QSsh::SshError)), SLOT(slotSshConnectError(QSsh::SshError)));
-    }
-    m_pSshSocket->connectToHost();
+    setAttribute(Qt::WA_DeleteOnClose);    
+    m_argParameters.host = ip;
+    m_argParameters.userName = user;
+    m_argParameters.password = passwd;
+    m_argParameters.port = 22;
+    m_argParameters.timeout = 5;
+    m_argParameters.authenticationType = QSsh::SshConnectionParameters::AuthenticationTypePassword;
+    startSsh();
 }
 
 sshToDevice::~sshToDevice()
@@ -30,40 +26,76 @@ sshToDevice::~sshToDevice()
     delete ui;
 }
 
+void sshToDevice::startSsh()
+{
+    if (m_pSshSocket != nullptr)
+    {
+        delete m_pSshSocket;
+        m_pSshSocket = nullptr;
+    }
+    m_pSshSocket = new QSsh::SshConnection(m_argParameters);
+    connect(m_pSshSocket, SIGNAL(connected()), SLOT(handleConnected()));
+    connect(m_pSshSocket, SIGNAL(error(QSsh::SshError)), SLOT(slotSshConnectError(QSsh::SshError)));
+    m_pSshSocket->connectToHost();
+
+}
+
 void sshToDevice::slotSshConnectError(QSsh::SshError sshError)
 {
-    switch (sshError) {
-    case QSsh::SshNoError:
-        qDebug() << "slotSshConnectError SshNoError";
-        break;
-    case QSsh::SshSocketError:
-        qDebug() << "slotSshConnectError SshSocketError"; //°ÎµôÍøÏßÊÇÕâÖÖ´íÎó
-        break;
-    case QSsh::SshTimeoutError:
-        qDebug() << "slotSshConnectError SshTimeoutError";
-        break;
-    case QSsh::SshProtocolError:
-        qDebug() << "slotSshConnectError SshProtocolError";
-        break;
-    case QSsh::SshHostKeyError:
-        qDebug() << "slotSshConnectError SshHostKeyError";
-        break;
-    case QSsh::SshKeyFileError:
-        qDebug() << "slotSshConnectError SshKeyFileError";
-        break;
-    case QSsh::SshAuthenticationError:
-        qDebug() << "slotSshConnectError SshAuthenticationError";
-        break;
-    case QSsh::SshClosedByServerError:
-        qDebug() << "slotSshConnectError SshClosedByServerError";
-        break;
-    case QSsh::SshInternalError:
-        qDebug() << "slotSshConnectError SshInternalError";
-        break;
-    default:
-        break;
+    switch (sshError) 
+    {
+        case QSsh::SshNoError:
+            qDebug() << "slotSshConnectError SshNoError";
+            QMessageBox::information(NULL, "´íÎó", "Éè±¸Á¬½ÓÊ§°Ü", QMessageBox::Yes);
+            break;
+        case QSsh::SshSocketError:
+            qDebug() << "slotSshConnectError SshSocketError"; //°ÎµôÍøÏßÊÇÕâÖÖ´íÎó
+            QMessageBox::information(NULL, "´íÎó", "Éè±¸µôÏß", QMessageBox::Yes);
+            break;
+        case QSsh::SshTimeoutError:
+            qDebug() << "slotSshConnectError SshTimeoutError";
+            QMessageBox::information(NULL, "´íÎó", "Á¬½Ó³¬Ê±", QMessageBox::Yes);
+            break;
+        case QSsh::SshProtocolError:
+            qDebug() << "slotSshConnectError SshProtocolError";
+            QMessageBox::information(NULL, "´íÎó", "SSHÐ­Òé´íÎó", QMessageBox::Yes);
+            break;
+        case QSsh::SshHostKeyError:
+        {
+            qDebug() << "slotSshConnectError SshHostKeyError";
+            QMessageBox::information(NULL, "´íÎó", "SSHÕËºÅÃÜÂë´íÎó", QMessageBox::Yes);
+            C_SshPasswdIn* inputSshPasswd = new C_SshPasswdIn;
+            connect(inputSshPasswd, SIGNAL(sigSaveSshPasswd), SLOT(SaveSshPasswd));
+            inputSshPasswd->show();
+            return;
+            break;
+        }
+        case QSsh::SshKeyFileError:
+            qDebug() << "slotSshConnectError SshKeyFileError";
+            QMessageBox::information(NULL, "´íÎó", "ÃÜÔ¿ÎÄ¼þ´íÎó", QMessageBox::Yes);
+            break;
+        case QSsh::SshAuthenticationError:
+        {
+            qDebug() << "slotSshConnectError SshAuthenticationError";
+            QMessageBox::information(NULL, "´íÎó", "SSHÕËºÅÃÜÂë´íÎó", QMessageBox::Yes);
+            C_SshPasswdIn* inputSshPasswd = new C_SshPasswdIn;
+            connect(inputSshPasswd, SIGNAL(sigSaveSshPasswd(QString, QString)), SLOT(SaveSshPasswd(QString, QString)));
+            inputSshPasswd->show();
+            return;
+            break;
+        }
+        case QSsh::SshClosedByServerError:
+            qDebug() << "slotSshConnectError SshClosedByServerError";
+            QMessageBox::information(NULL, "´íÎó", "Éè±¸¹Ø±ÕÁ¬½Ó", QMessageBox::Yes);
+            break;
+        case QSsh::SshInternalError:
+            qDebug() << "slotSshConnectError SshInternalError";
+            QMessageBox::information(NULL, "´íÎó", "ÍøÂç´íÎó", QMessageBox::Yes);
+            break;
+        default:
+            break;
     }
-
+    close();
 }
 
 void sshToDevice::handleConnected()
@@ -91,9 +123,6 @@ void sshToDevice::slotDataReceived()
     QString strRecv = (byteRecv);
     QRegExp re("\\x1b\\[[0-9]+(?:;[0-9]+){0,2}m");
     strRecv.replace(re, "");
-//    if(strRecv.contains("password for")){
-//        m_shell->write(m_strPwd.toLatin1().data());
-//    }
 
     if(!strRecv.isEmpty()) //¹ýÂË¿ÕÐÐ
     {
@@ -107,3 +136,10 @@ void sshToDevice::on_lineEdit_Send_returnPressed()
     ui->lineEdit_Send->clear();
 }
 
+void sshToDevice::SaveSshPasswd(QString user, QString passwd)
+{
+    emit sigSaveSshPasswd(user, passwd);
+    m_argParameters.userName = user;
+    m_argParameters.password = passwd;
+    startSsh();
+}
