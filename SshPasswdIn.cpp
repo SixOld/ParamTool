@@ -13,6 +13,7 @@ C_SshPasswdIn::C_SshPasswdIn(QWidget *parent) :
 
 C_SshPasswdIn::~C_SshPasswdIn()
 {
+
     delete ui;
 }
 

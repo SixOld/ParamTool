@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    m_param.SetConfig();
     delete ui;
 }
 
@@ -32,7 +33,6 @@ void MainWindow::on_pushButton_clicked()
 {
     m_param.IP = ui->lineEdit_ip->text();
     m_param.Port = ui->lineEdit_port->text().toInt();
-    m_param.SetConfig();
 }
 
 void MainWindow::SaveSshPasswd(QString user, QString passwd)

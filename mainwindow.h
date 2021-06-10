@@ -20,10 +20,11 @@ private slots:
     void on_actionSSH_triggered();
     void on_pushButton_clicked();
     void SaveSshPasswd(QString user, QString passwd);
+    void setColorValue(int);
 
 private:
+    void initColorSlider(void);
     C_ParamSave m_param;
     Ui::MainWindow *ui;
-
 };
 #endif // MAINWINDOW_H
