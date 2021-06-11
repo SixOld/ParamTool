@@ -9,7 +9,10 @@ SOURCES += \
     SshPasswdIn.cpp \
     main.cpp \
     mainwindow.cpp \
-    sshtodevice.cpp
+    sshtodevice.cpp \
+	SliderControl.cpp \
+	SocketOperation.cpp \
+	
 
 INCLUDEPATH += $$PWD/OpenSource/QSsh/include
 
@@ -17,7 +20,8 @@ HEADERS += \
     ParamSave.h \
     SshPasswdIn.h \
     mainwindow.h \
-    sshtodevice.h
+    sshtodevice.h \
+	SocketOperation.h
 
 FORMS += \
     SshPasswdIn.ui \
