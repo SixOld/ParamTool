@@ -1,18 +1,19 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindowg16896.ui'
+** Form generated from reading UI file 'mainwindowp20340.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.9.9
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef MAINWINDOWG16896_H
-#define MAINWINDOWG16896_H
+#ifndef MAINWINDOWP20340_H
+#define MAINWINDOWP20340_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
@@ -26,6 +27,7 @@
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -49,45 +51,55 @@ public:
     QLabel *Image_finall;
     QLabel *Image_backup;
     QTabWidget *tabWidget;
-    QWidget *tabWidgetPage1;
+    QWidget *tabWidgetPageColor;
     QVBoxLayout *verticalLayout_4;
     QVBoxLayout *verticalLayout_3;
     QHBoxLayout *horizontalLayout_7;
     QLabel *label_3;
     QSlider *horizontalSlider_color;
+    QLineEdit *lineEdit_color;
     QSpacerItem *verticalSpacer;
     QHBoxLayout *horizontalLayout_8;
     QLabel *label_4;
     QSlider *horizontalSlider_hMax;
+    QLineEdit *lineEdit_hMax;
     QSpacerItem *verticalSpacer_2;
     QHBoxLayout *horizontalLayout_9;
     QLabel *label_5;
     QSlider *horizontalSlider_hMin;
+    QLineEdit *lineEdit_hMin;
     QSpacerItem *verticalSpacer_3;
     QHBoxLayout *horizontalLayout_10;
     QLabel *label_6;
     QSlider *horizontalSlider_sMax;
+    QLineEdit *lineEdit_sMax;
     QSpacerItem *verticalSpacer_4;
     QHBoxLayout *horizontalLayout_11;
     QLabel *label_7;
     QSlider *horizontalSlider_sMin;
+    QLineEdit *lineEdit_sMin;
     QSpacerItem *verticalSpacer_5;
     QHBoxLayout *horizontalLayout_12;
     QLabel *label_8;
     QSlider *horizontalSlider_vMax;
+    QLineEdit *lineEdit_vMax;
     QSpacerItem *verticalSpacer_6;
     QHBoxLayout *horizontalLayout_13;
     QLabel *label_9;
     QSlider *horizontalSlider_vMin;
+    QLineEdit *lineEdit_vMin;
     QWidget *tab;
     QGroupBox *groupBox_3;
-    QWidget *layoutWidget;
+    QGridLayout *gridLayout;
+    QVBoxLayout *verticalLayout_5;
     QHBoxLayout *horizontalLayout;
     QLabel *label;
     QLineEdit *lineEdit_ip;
     QLabel *label_2;
     QLineEdit *lineEdit_port;
     QPushButton *pushButton;
+    QLineEdit *lineEdit_send;
+    QTextBrowser *textBrowser_recv;
     QMenuBar *menubar;
     QMenu *menu;
     QStatusBar *statusbar;
@@ -96,7 +108,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(1082, 634);
+        MainWindow->resize(1082, 700);
         actionSSH = new QAction(MainWindow);
         actionSSH->setObjectName(QStringLiteral("actionSSH"));
         centralwidget = new QWidget(MainWindow);
@@ -166,24 +178,31 @@ public:
         tabWidget->setSizePolicy(sizePolicy);
         tabWidget->setMinimumSize(QSize(300, 0));
         tabWidget->setMaximumSize(QSize(300, 16777215));
-        tabWidgetPage1 = new QWidget();
-        tabWidgetPage1->setObjectName(QStringLiteral("tabWidgetPage1"));
-        verticalLayout_4 = new QVBoxLayout(tabWidgetPage1);
+        tabWidgetPageColor = new QWidget();
+        tabWidgetPageColor->setObjectName(QStringLiteral("tabWidgetPageColor"));
+        verticalLayout_4 = new QVBoxLayout(tabWidgetPageColor);
         verticalLayout_4->setObjectName(QStringLiteral("verticalLayout_4"));
         verticalLayout_3 = new QVBoxLayout();
         verticalLayout_3->setObjectName(QStringLiteral("verticalLayout_3"));
         horizontalLayout_7 = new QHBoxLayout();
         horizontalLayout_7->setObjectName(QStringLiteral("horizontalLayout_7"));
-        label_3 = new QLabel(tabWidgetPage1);
+        label_3 = new QLabel(tabWidgetPageColor);
         label_3->setObjectName(QStringLiteral("label_3"));
 
         horizontalLayout_7->addWidget(label_3);
 
-        horizontalSlider_color = new QSlider(tabWidgetPage1);
+        horizontalSlider_color = new QSlider(tabWidgetPageColor);
         horizontalSlider_color->setObjectName(QStringLiteral("horizontalSlider_color"));
         horizontalSlider_color->setOrientation(Qt::Horizontal);
 
         horizontalLayout_7->addWidget(horizontalSlider_color);
+
+        lineEdit_color = new QLineEdit(tabWidgetPageColor);
+        lineEdit_color->setObjectName(QStringLiteral("lineEdit_color"));
+        lineEdit_color->setMinimumSize(QSize(25, 0));
+        lineEdit_color->setMaximumSize(QSize(25, 16777215));
+
+        horizontalLayout_7->addWidget(lineEdit_color);
 
 
         verticalLayout_3->addLayout(horizontalLayout_7);
@@ -194,16 +213,23 @@ public:
 
         horizontalLayout_8 = new QHBoxLayout();
         horizontalLayout_8->setObjectName(QStringLiteral("horizontalLayout_8"));
-        label_4 = new QLabel(tabWidgetPage1);
+        label_4 = new QLabel(tabWidgetPageColor);
         label_4->setObjectName(QStringLiteral("label_4"));
 
         horizontalLayout_8->addWidget(label_4);
 
-        horizontalSlider_hMax = new QSlider(tabWidgetPage1);
+        horizontalSlider_hMax = new QSlider(tabWidgetPageColor);
         horizontalSlider_hMax->setObjectName(QStringLiteral("horizontalSlider_hMax"));
         horizontalSlider_hMax->setOrientation(Qt::Horizontal);
 
         horizontalLayout_8->addWidget(horizontalSlider_hMax);
+
+        lineEdit_hMax = new QLineEdit(tabWidgetPageColor);
+        lineEdit_hMax->setObjectName(QStringLiteral("lineEdit_hMax"));
+        lineEdit_hMax->setMinimumSize(QSize(25, 0));
+        lineEdit_hMax->setMaximumSize(QSize(25, 16777215));
+
+        horizontalLayout_8->addWidget(lineEdit_hMax);
 
 
         verticalLayout_3->addLayout(horizontalLayout_8);
@@ -214,16 +240,23 @@ public:
 
         horizontalLayout_9 = new QHBoxLayout();
         horizontalLayout_9->setObjectName(QStringLiteral("horizontalLayout_9"));
-        label_5 = new QLabel(tabWidgetPage1);
+        label_5 = new QLabel(tabWidgetPageColor);
         label_5->setObjectName(QStringLiteral("label_5"));
 
         horizontalLayout_9->addWidget(label_5);
 
-        horizontalSlider_hMin = new QSlider(tabWidgetPage1);
+        horizontalSlider_hMin = new QSlider(tabWidgetPageColor);
         horizontalSlider_hMin->setObjectName(QStringLiteral("horizontalSlider_hMin"));
         horizontalSlider_hMin->setOrientation(Qt::Horizontal);
 
         horizontalLayout_9->addWidget(horizontalSlider_hMin);
+
+        lineEdit_hMin = new QLineEdit(tabWidgetPageColor);
+        lineEdit_hMin->setObjectName(QStringLiteral("lineEdit_hMin"));
+        lineEdit_hMin->setMinimumSize(QSize(25, 0));
+        lineEdit_hMin->setMaximumSize(QSize(25, 16777215));
+
+        horizontalLayout_9->addWidget(lineEdit_hMin);
 
 
         verticalLayout_3->addLayout(horizontalLayout_9);
@@ -234,16 +267,23 @@ public:
 
         horizontalLayout_10 = new QHBoxLayout();
         horizontalLayout_10->setObjectName(QStringLiteral("horizontalLayout_10"));
-        label_6 = new QLabel(tabWidgetPage1);
+        label_6 = new QLabel(tabWidgetPageColor);
         label_6->setObjectName(QStringLiteral("label_6"));
 
         horizontalLayout_10->addWidget(label_6);
 
-        horizontalSlider_sMax = new QSlider(tabWidgetPage1);
+        horizontalSlider_sMax = new QSlider(tabWidgetPageColor);
         horizontalSlider_sMax->setObjectName(QStringLiteral("horizontalSlider_sMax"));
         horizontalSlider_sMax->setOrientation(Qt::Horizontal);
 
         horizontalLayout_10->addWidget(horizontalSlider_sMax);
+
+        lineEdit_sMax = new QLineEdit(tabWidgetPageColor);
+        lineEdit_sMax->setObjectName(QStringLiteral("lineEdit_sMax"));
+        lineEdit_sMax->setMinimumSize(QSize(25, 0));
+        lineEdit_sMax->setMaximumSize(QSize(25, 16777215));
+
+        horizontalLayout_10->addWidget(lineEdit_sMax);
 
 
         verticalLayout_3->addLayout(horizontalLayout_10);
@@ -254,16 +294,23 @@ public:
 
         horizontalLayout_11 = new QHBoxLayout();
         horizontalLayout_11->setObjectName(QStringLiteral("horizontalLayout_11"));
-        label_7 = new QLabel(tabWidgetPage1);
+        label_7 = new QLabel(tabWidgetPageColor);
         label_7->setObjectName(QStringLiteral("label_7"));
 
         horizontalLayout_11->addWidget(label_7);
 
-        horizontalSlider_sMin = new QSlider(tabWidgetPage1);
+        horizontalSlider_sMin = new QSlider(tabWidgetPageColor);
         horizontalSlider_sMin->setObjectName(QStringLiteral("horizontalSlider_sMin"));
         horizontalSlider_sMin->setOrientation(Qt::Horizontal);
 
         horizontalLayout_11->addWidget(horizontalSlider_sMin);
+
+        lineEdit_sMin = new QLineEdit(tabWidgetPageColor);
+        lineEdit_sMin->setObjectName(QStringLiteral("lineEdit_sMin"));
+        lineEdit_sMin->setMinimumSize(QSize(25, 0));
+        lineEdit_sMin->setMaximumSize(QSize(25, 16777215));
+
+        horizontalLayout_11->addWidget(lineEdit_sMin);
 
 
         verticalLayout_3->addLayout(horizontalLayout_11);
@@ -274,16 +321,23 @@ public:
 
         horizontalLayout_12 = new QHBoxLayout();
         horizontalLayout_12->setObjectName(QStringLiteral("horizontalLayout_12"));
-        label_8 = new QLabel(tabWidgetPage1);
+        label_8 = new QLabel(tabWidgetPageColor);
         label_8->setObjectName(QStringLiteral("label_8"));
 
         horizontalLayout_12->addWidget(label_8);
 
-        horizontalSlider_vMax = new QSlider(tabWidgetPage1);
+        horizontalSlider_vMax = new QSlider(tabWidgetPageColor);
         horizontalSlider_vMax->setObjectName(QStringLiteral("horizontalSlider_vMax"));
         horizontalSlider_vMax->setOrientation(Qt::Horizontal);
 
         horizontalLayout_12->addWidget(horizontalSlider_vMax);
+
+        lineEdit_vMax = new QLineEdit(tabWidgetPageColor);
+        lineEdit_vMax->setObjectName(QStringLiteral("lineEdit_vMax"));
+        lineEdit_vMax->setMinimumSize(QSize(25, 0));
+        lineEdit_vMax->setMaximumSize(QSize(25, 16777215));
+
+        horizontalLayout_12->addWidget(lineEdit_vMax);
 
 
         verticalLayout_3->addLayout(horizontalLayout_12);
@@ -294,16 +348,23 @@ public:
 
         horizontalLayout_13 = new QHBoxLayout();
         horizontalLayout_13->setObjectName(QStringLiteral("horizontalLayout_13"));
-        label_9 = new QLabel(tabWidgetPage1);
+        label_9 = new QLabel(tabWidgetPageColor);
         label_9->setObjectName(QStringLiteral("label_9"));
 
         horizontalLayout_13->addWidget(label_9);
 
-        horizontalSlider_vMin = new QSlider(tabWidgetPage1);
+        horizontalSlider_vMin = new QSlider(tabWidgetPageColor);
         horizontalSlider_vMin->setObjectName(QStringLiteral("horizontalSlider_vMin"));
         horizontalSlider_vMin->setOrientation(Qt::Horizontal);
 
         horizontalLayout_13->addWidget(horizontalSlider_vMin);
+
+        lineEdit_vMin = new QLineEdit(tabWidgetPageColor);
+        lineEdit_vMin->setObjectName(QStringLiteral("lineEdit_vMin"));
+        lineEdit_vMin->setMinimumSize(QSize(25, 0));
+        lineEdit_vMin->setMaximumSize(QSize(25, 16777215));
+
+        horizontalLayout_13->addWidget(lineEdit_vMin);
 
 
         verticalLayout_3->addLayout(horizontalLayout_13);
@@ -311,7 +372,7 @@ public:
 
         verticalLayout_4->addLayout(verticalLayout_3);
 
-        tabWidget->addTab(tabWidgetPage1, QString());
+        tabWidget->addTab(tabWidgetPageColor, QString());
         tab = new QWidget();
         tab->setObjectName(QStringLiteral("tab"));
         tabWidget->addTab(tab, QString());
@@ -327,46 +388,62 @@ public:
         groupBox_3->setSizePolicy(sizePolicy);
         groupBox_3->setMinimumSize(QSize(0, 100));
         groupBox_3->setMaximumSize(QSize(16777215, 100));
-        layoutWidget = new QWidget(groupBox_3);
-        layoutWidget->setObjectName(QStringLiteral("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 20, 403, 27));
-        horizontalLayout = new QHBoxLayout(layoutWidget);
+        gridLayout = new QGridLayout(groupBox_3);
+        gridLayout->setObjectName(QStringLiteral("gridLayout"));
+        verticalLayout_5 = new QVBoxLayout();
+        verticalLayout_5->setObjectName(QStringLiteral("verticalLayout_5"));
+        horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QStringLiteral("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(layoutWidget);
+        label = new QLabel(groupBox_3);
         label->setObjectName(QStringLiteral("label"));
         label->setMinimumSize(QSize(15, 25));
         label->setMaximumSize(QSize(15, 25));
 
         horizontalLayout->addWidget(label);
 
-        lineEdit_ip = new QLineEdit(layoutWidget);
+        lineEdit_ip = new QLineEdit(groupBox_3);
         lineEdit_ip->setObjectName(QStringLiteral("lineEdit_ip"));
         lineEdit_ip->setMinimumSize(QSize(130, 20));
         lineEdit_ip->setMaximumSize(QSize(130, 20));
 
         horizontalLayout->addWidget(lineEdit_ip);
 
-        label_2 = new QLabel(layoutWidget);
+        label_2 = new QLabel(groupBox_3);
         label_2->setObjectName(QStringLiteral("label_2"));
         label_2->setMinimumSize(QSize(25, 25));
         label_2->setMaximumSize(QSize(25, 25));
 
         horizontalLayout->addWidget(label_2);
 
-        lineEdit_port = new QLineEdit(layoutWidget);
+        lineEdit_port = new QLineEdit(groupBox_3);
         lineEdit_port->setObjectName(QStringLiteral("lineEdit_port"));
         lineEdit_port->setMinimumSize(QSize(130, 20));
         lineEdit_port->setMaximumSize(QSize(130, 20));
 
         horizontalLayout->addWidget(lineEdit_port);
 
-        pushButton = new QPushButton(layoutWidget);
+        pushButton = new QPushButton(groupBox_3);
         pushButton->setObjectName(QStringLiteral("pushButton"));
         pushButton->setMinimumSize(QSize(75, 25));
         pushButton->setMaximumSize(QSize(75, 25));
 
         horizontalLayout->addWidget(pushButton);
+
+
+        verticalLayout_5->addLayout(horizontalLayout);
+
+        lineEdit_send = new QLineEdit(groupBox_3);
+        lineEdit_send->setObjectName(QStringLiteral("lineEdit_send"));
+
+        verticalLayout_5->addWidget(lineEdit_send);
+
+
+        gridLayout->addLayout(verticalLayout_5, 0, 0, 1, 1);
+
+        textBrowser_recv = new QTextBrowser(groupBox_3);
+        textBrowser_recv->setObjectName(QStringLiteral("textBrowser_recv"));
+
+        gridLayout->addWidget(textBrowser_recv, 0, 1, 1, 1);
 
 
         verticalLayout->addWidget(groupBox_3);
@@ -412,7 +489,7 @@ public:
         label_7->setText(QApplication::translate("MainWindow", "S_Min", Q_NULLPTR));
         label_8->setText(QApplication::translate("MainWindow", "V_Max", Q_NULLPTR));
         label_9->setText(QApplication::translate("MainWindow", "V_Min", Q_NULLPTR));
-        tabWidget->setTabText(tabWidget->indexOf(tabWidgetPage1), QApplication::translate("MainWindow", "\351\242\234\350\211\262", Q_NULLPTR));
+        tabWidget->setTabText(tabWidget->indexOf(tabWidgetPageColor), QApplication::translate("MainWindow", "\351\242\234\350\211\262", Q_NULLPTR));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("MainWindow", "\345\275\242\347\212\266", Q_NULLPTR));
         groupBox_3->setTitle(QString());
         label->setText(QApplication::translate("MainWindow", "IP", Q_NULLPTR));
@@ -429,4 +506,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // MAINWINDOWG16896_H
+#endif // MAINWINDOWP20340_H

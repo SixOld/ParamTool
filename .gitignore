@@ -30,3 +30,14 @@
 *.exe
 *.out
 *.app
+
+*.pro.user
+*.sln
+*.vcxproj*
+*.json
+*.hint
+visionparamtool_plugin_import.cpp
+.qmake.stash
+.vs/
+debug/
+release/
