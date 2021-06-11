@@ -28,8 +28,9 @@ private slots:
 
 private:
     void initColorSlider(void);
-    C_ParamSave m_param;
+    void changeStatusOfUI(bool value);
     Ui::MainWindow *ui;
+    C_ParamSave m_param;
     C_SocketOperation m_socket;
 };
 #endif // MAINWINDOW_H

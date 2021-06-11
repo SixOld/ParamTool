@@ -73,5 +73,5 @@ void C_SocketOperation::socketReadData()
 
 void C_SocketOperation::socketDisconnected()
 {
-	emit sigSocketRecvData(QString("Connect Break"));
+	emit sigSocketRecvData(QString("Connect Break Off"));
 }

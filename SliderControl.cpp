@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <SocketOperation.h>
+#include "SocketOperation.h"
 
 void MainWindow::initColorSlider(void)
 {
@@ -11,7 +11,7 @@ void MainWindow::initColorSlider(void)
 		{
 			QSlider* slider = qobject_cast<QSlider*>(objects[ki]);
 			slider->setRange(0, 255);
-			connect(slider, &QSlider::valueChanged, this, &MainWindow::setColorValue);;
+			connect(slider, &QSlider::valueChanged, this, &MainWindow::setColorValue);
 
 		}
 		else if (objects[ki]->objectName().startsWith("lineEdit"))
@@ -23,7 +23,6 @@ void MainWindow::initColorSlider(void)
 	}
 	ui->horizontalSlider_color->setRange(0, 1);
 	ui->lineEdit_color->setValidator(new QIntValidator(0, 1, this));
-
 
 }
 
@@ -41,7 +40,7 @@ void MainWindow::setColorValue(int value)
 	}
 	S_SendProtocol sendData = {};
 	sendData.HeadStart	= 0xaa;
-	sendData.HeadEnd	= 0xbb;
+	sendData.HeadEnd = 0xbb;
 	strcpy((char*)sendData.DataName, objectName.toLatin1().data());
 	memcpy(sendData.value, &value, sizeof(value));
 	sendData.Length = sizeof(sendData);
@@ -60,11 +59,4 @@ void MainWindow::setColorText(QString value)
 			qobject_cast<QSlider*>(list[ki])->setValue(value.toInt());
 		}
 	}
-	S_SendProtocol sendData = {};
-	sendData.HeadStart = 0xaa;
-	sendData.HeadEnd = 0xbb;
-	strcpy((char*)sendData.DataName, objectName.toLatin1().data());
-	memcpy(sendData.value, &value, sizeof(value));
-	sendData.Length = sizeof(sendData);
-	m_socket.SendData(sendData);
 }
