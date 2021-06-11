@@ -2,25 +2,29 @@
 
 C_SocketOperation::C_SocketOperation()
 {
-	m_socket = new QTcpSocket();
-	QObject::connect(m_socket, &QTcpSocket::readyRead, this, &C_SocketOperation::socketReadData);
-	QObject::connect(m_socket, &QTcpSocket::disconnected, this, &C_SocketOperation::socketDisconnected);
+	m_tcp = new QTcpSocket();
+	connect(m_tcp, &QTcpSocket::readyRead, this, &C_SocketOperation::socketReadData);
+	connect(m_tcp, &QTcpSocket::disconnected, this, &C_SocketOperation::socketDisconnected);
+
+	m_udpImage = new QUdpSocket();
+	m_udpImage->bind(QHostAddress("127.0.0.1"), UDP_IMAGE_PORT);
+	connect(m_udpImage, &QUdpSocket::readyRead, this, &C_SocketOperation::imageRecvice);
 }
 
 C_SocketOperation::~C_SocketOperation()
 {
-	if (m_socket != nullptr)
+	if (m_tcp != nullptr)
 	{
-		delete m_socket;
+		delete m_tcp;
 	}
 }
 
 int32_t C_SocketOperation::ConnectToService(QString ip, int port)
 {
-	m_socket->abort();
-	m_socket->connectToHost(ip, port);
+	m_tcp->abort();
+	m_tcp->connectToHost(ip, port);
 
-	if (!m_socket->waitForConnected(10000))
+	if (!m_tcp->waitForConnected(10000))
 	{
 		qDebug() << "Connection failed!";
 		return -1;
@@ -30,16 +34,16 @@ int32_t C_SocketOperation::ConnectToService(QString ip, int port)
 
 int32_t C_SocketOperation::BreakOffConnect()
 {
-	m_socket->disconnectFromHost();
+	m_tcp->disconnectFromHost();
 	return 0;
 }
 
 int32_t C_SocketOperation::SendData(QString data)
 {
 	//读取缓冲区数据
-	if (m_socket->write(data.toLatin1()) > 0)
+	if (m_tcp->write(data.toLatin1()) > 0)
 	{
-		m_socket->flush();
+		m_tcp->flush();
 		return 0;
 	}
 	return -1;
@@ -48,9 +52,9 @@ int32_t C_SocketOperation::SendData(QString data)
 int32_t C_SocketOperation::SendData(S_SendProtocol data)
 {
 	//读取缓冲区数据
-	if (m_socket->write((char*)&data, sizeof(data)) > 0)
+	if (m_tcp->write((char*)&data, sizeof(data)) > 0)
 	{
-		m_socket->flush();
+		m_tcp->flush();
 		return 0;
 	}
 	return -1;
@@ -59,7 +63,7 @@ int32_t C_SocketOperation::SendData(S_SendProtocol data)
 void C_SocketOperation::socketReadData()
 {
 	//读取缓冲区数据
-	QByteArray buffer = m_socket->readAll();
+	QByteArray buffer = m_tcp->readAll();
 	S_SendProtocol* recvData = (S_SendProtocol*)buffer.data();
 	QString str = QString(buffer);
 	if (recvData->Length == sizeof(S_SendProtocol))
@@ -74,4 +78,16 @@ void C_SocketOperation::socketReadData()
 void C_SocketOperation::socketDisconnected()
 {
 	emit sigSocketRecvData(QString("Connect Break Off"));
+}
+
+void C_SocketOperation::imageRecvice()
+{
+	QByteArray buffer;
+
+	while (m_udpImage->hasPendingDatagrams())
+	{
+		buffer.resize(m_udpImage->pendingDatagramSize());
+		m_udpImage->readDatagram(buffer.data(), buffer.size());
+		emit sigSocketRecvData(buffer);
+	}
 }

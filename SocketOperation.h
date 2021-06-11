@@ -2,8 +2,11 @@
 #define SOCKET_OPERATION_H
 
 #include <QTcpSocket>
+#include <QUdpSocket>
 #include <QString>
 #include <QObject>
+
+#define UDP_IMAGE_PORT 7788
 
 typedef struct 
 {
@@ -26,11 +29,13 @@ public:
 	int32_t SendData(S_SendProtocol data);
 
 private:
-	QTcpSocket* m_socket = nullptr;
+	QTcpSocket* m_tcp = nullptr;
+	QUdpSocket* m_udpImage = nullptr;
 
 private slots:
 	void socketReadData();
 	void socketDisconnected();
+	void imageRecvice();
 
 signals:
 	void sigSocketRecvData(QString text);
