@@ -7,8 +7,16 @@ C_SocketOperation::C_SocketOperation()
 	connect(m_tcp, &QTcpSocket::disconnected, this, &C_SocketOperation::socketDisconnected);
 
 	m_udpImage = new QUdpSocket();
-	m_udpImage->bind(QHostAddress("127.0.0.1"), UDP_IMAGE_PORT);
+	m_udpImage->bind(QHostAddress(UDP_RECV_IP), UDP_IMAGE_PORT);
 	connect(m_udpImage, &QUdpSocket::readyRead, this, &C_SocketOperation::imageRecvice);
+
+	m_udpBinary = new QUdpSocket();
+	m_udpBinary->bind(QHostAddress(UDP_RECV_IP), UDP_BINARY_PORT);
+	connect(m_udpBinary, &QUdpSocket::readyRead, this, &C_SocketOperation::imageRecvice);
+
+	m_udpDebug = new QUdpSocket();
+	m_udpDebug->bind(QHostAddress(UDP_RECV_IP), UDP_DEBUG_PORT);
+	connect(m_udpDebug, &QUdpSocket::readyRead, this, &C_SocketOperation::debugRecvice);
 }
 
 C_SocketOperation::~C_SocketOperation()
@@ -70,7 +78,8 @@ void C_SocketOperation::socketReadData()
 	{
 		int32_t value = 0;
 		memcpy(&value, recvData->value, sizeof(value));
-		str = QString("Protocol, DataName: %1, Value: %2").arg(QString((char*)recvData->DataName)).arg(value);
+		emit sigSocketSetSliderValue(recvData->Cmd, value);
+		str = QString("Protocol, CMD: %1, Value: %2").arg(QString::number(recvData->Cmd)).arg(value);
 	}
 	emit sigSocketRecvData(str);
 }
@@ -78,6 +87,18 @@ void C_SocketOperation::socketReadData()
 void C_SocketOperation::socketDisconnected()
 {
 	emit sigSocketRecvData(QString("Connect Break Off"));
+}
+
+void C_SocketOperation::debugRecvice()
+{
+	QByteArray buffer;
+
+	while (m_udpDebug->hasPendingDatagrams())
+	{
+		buffer.resize(m_udpDebug->pendingDatagramSize());
+		m_udpDebug->readDatagram(buffer.data(), buffer.size());
+		emit sigSocketRecvData(buffer);
+	}
 }
 
 void C_SocketOperation::imageRecvice()
@@ -88,6 +109,13 @@ void C_SocketOperation::imageRecvice()
 	{
 		buffer.resize(m_udpImage->pendingDatagramSize());
 		m_udpImage->readDatagram(buffer.data(), buffer.size());
-		emit sigSocketRecvData(buffer);
+		emit sigSocketRecvImage(buffer.data(), buffer.size());
+	}
+
+	while (m_udpBinary->hasPendingDatagrams())
+	{
+		buffer.resize(m_udpBinary->pendingDatagramSize());
+		m_udpBinary->readDatagram(buffer.data(), buffer.size());
+		emit sigSocketRecvBinary(buffer.data(), buffer.size());
 	}
 }
