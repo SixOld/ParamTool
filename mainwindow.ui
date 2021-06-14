@@ -92,7 +92,7 @@
                 </size>
                </property>
                <property name="currentIndex">
-                <number>2</number>
+                <number>0</number>
                </property>
                <widget class="QWidget" name="tabWidgetPageColor">
                 <attribute name="title">
@@ -121,13 +121,13 @@
                       <widget class="QLineEdit" name="lineEdit_color">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -168,13 +168,13 @@
                       <widget class="QLineEdit" name="lineEdit_hMax">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -215,13 +215,13 @@
                       <widget class="QLineEdit" name="lineEdit_hMin">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -262,13 +262,13 @@
                       <widget class="QLineEdit" name="lineEdit_sMax">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -309,13 +309,13 @@
                       <widget class="QLineEdit" name="lineEdit_sMin">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -356,13 +356,13 @@
                       <widget class="QLineEdit" name="lineEdit_vMax">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -403,13 +403,13 @@
                       <widget class="QLineEdit" name="lineEdit_vMin">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
                        </property>
@@ -460,15 +460,22 @@
                       <widget class="QLineEdit" name="lineEdit_lightBarAngleMin">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_lightBarAngleMin">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -519,15 +526,22 @@
                       <widget class="QLineEdit" name="lineEdit_lightBarAngleMax">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_lightBarAngleMax">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -578,15 +592,22 @@
                       <widget class="QLineEdit" name="lineEdit_lightBarAreaMin">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_lightBarAreaMin">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -637,15 +658,22 @@
                       <widget class="QLineEdit" name="lineEdit_lightBarAreaMax">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_lightBarAreaMax">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -696,15 +724,22 @@
                       <widget class="QLineEdit" name="lineEdit_lightBarPropMin">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_lightBarPropMin">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -755,15 +790,22 @@
                       <widget class="QLineEdit" name="lineEdit_lightBarPropMax">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_lightBarPropMax">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -814,15 +856,22 @@
                       <widget class="QLineEdit" name="lineEdit_lightBarAngleDiff">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_lightBarAngleDiff">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -873,15 +922,22 @@
                       <widget class="QLineEdit" name="lineEdit_lightBarAreaDiff">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_lightBarAreaDiff">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -917,7 +973,7 @@
                         </size>
                        </property>
                        <property name="text">
-                        <string>灯条长长比最大值0.00</string>
+                        <string>灯条高度比最大值0.00</string>
                        </property>
                       </widget>
                      </item>
@@ -932,15 +988,22 @@
                       <widget class="QLineEdit" name="lineEdit_lightBarlongPropMax">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_lightBarlongPropMax">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -976,7 +1039,7 @@
                         </size>
                        </property>
                        <property name="text">
-                        <string>灯条长长比最小值0.00</string>
+                        <string>灯条高度比最小值0.00</string>
                        </property>
                       </widget>
                      </item>
@@ -991,15 +1054,22 @@
                       <widget class="QLineEdit" name="lineEdit_lightBarlongPropMin">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_lightBarlongPropMin">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -1011,7 +1081,7 @@
                </widget>
                <widget class="QWidget" name="tabWidgetPageArmor">
                 <attribute name="title">
-                 <string>形状1</string>
+                 <string>装甲</string>
                 </attribute>
                 <layout class="QVBoxLayout" name="verticalLayout_8">
                  <item>
@@ -1038,25 +1108,32 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QSlider" name="horizontalSlider_armorAngleMin_2">
+                      <widget class="QSlider" name="horizontalSlider_armorAngleMin">
                        <property name="orientation">
                         <enum>Qt::Horizontal</enum>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_armorAngleMin_2">
+                      <widget class="QLineEdit" name="lineEdit_armorAngleMin">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_armorAngleMin">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -1097,25 +1174,32 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QSlider" name="horizontalSlider_armorAreaMin_2">
+                      <widget class="QSlider" name="horizontalSlider_armorAreaMin">
                        <property name="orientation">
                         <enum>Qt::Horizontal</enum>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_armorAreaMin_2">
+                      <widget class="QLineEdit" name="lineEdit_armorAreaMin">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_armorAreaMin">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -1156,25 +1240,32 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QSlider" name="horizontalSlider_armorAreaMax_2">
+                      <widget class="QSlider" name="horizontalSlider_armorAreaMax">
                        <property name="orientation">
                         <enum>Qt::Horizontal</enum>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="QLineEdit" name="lineEdit_armorAreaMax_2">
+                      <widget class="QLineEdit" name="lineEdit_armorAreaMax">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_armorAreaMax">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -1225,15 +1316,22 @@
                       <widget class="QLineEdit" name="lineEdit_smallArmorPropMin">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_smallArmorPropMin">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -1284,15 +1382,22 @@
                       <widget class="QLineEdit" name="lineEdit_smallArmorPropMax">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_smallArmorPropMax">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -1343,15 +1448,22 @@
                       <widget class="QLineEdit" name="lineEdit_bigArmorPropMin">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_bigArmorPropMin">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -1402,15 +1514,22 @@
                       <widget class="QLineEdit" name="lineEdit_bigArmorPropMax">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_bigArmorPropMax">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -1461,15 +1580,22 @@
                       <widget class="QLineEdit" name="lineEdit_smallDistanceParam">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_smallDistanceParam">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>
@@ -1520,15 +1646,22 @@
                       <widget class="QLineEdit" name="lineEdit_bigDistanceParam">
                        <property name="minimumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>0</height>
                         </size>
                        </property>
                        <property name="maximumSize">
                         <size>
-                         <width>25</width>
+                         <width>35</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QCheckBox" name="checkBox_bigDistanceParam">
+                       <property name="text">
+                        <string/>
                        </property>
                       </widget>
                      </item>

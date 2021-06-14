@@ -21,10 +21,14 @@ MainWindow::MainWindow(QWidget *parent)
     connect(&m_socket, &C_SocketOperation::sigSocketRecvImage, this, &MainWindow::getSocketImageShow);
     connect(&m_socket, &C_SocketOperation::sigSocketRecvBinary, this, &MainWindow::getSocketBinaryShow);
 
-    m_pTimer = new QTimer(this);
-    connect(m_pTimer, &QTimer::timeout, this, &MainWindow::handleTimeout);
-    m_pTimer->setInterval(10);
-    m_pTimer->start();
+    mp_imageTimer = new QTimer(this);
+    connect(mp_imageTimer, &QTimer::timeout, this, &MainWindow::handleTimeout);
+    mp_imageTimer->setInterval(20);
+    mp_imageTimer->start();
+
+    mp_debugTimer = new QTimer(this);
+    connect(mp_debugTimer, &QTimer::timeout, this, &MainWindow::handleDebugTimeout);
+    mp_debugTimer->setInterval(100);
 
     connect(&m_socket, &C_SocketOperation::sigSocketSetSliderValue, this, &MainWindow::changeSliderValue);
 }
@@ -32,7 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
 MainWindow::~MainWindow()
 {
     m_param.SetConfig();
-    delete m_pTimer;
+    delete mp_imageTimer;
     delete ui;
 }
 
@@ -61,22 +65,14 @@ void MainWindow::on_pushButton_clicked()
         ui->lineEdit_ip->setEnabled(false);
         ui->lineEdit_port->setEnabled(false);
         ui->lineEdit_send->setEnabled(true);
-        changeStatusOfUI(true);
         ui->textBrowser_recv->clear();
         S_SendProtocol sendData = {};
         sendData.HeadStart = 0xaa;
         sendData.HeadEnd = 0xbb;
         sendData.Length = sizeof(sendData);
-        sendData.Cmd = TCP_GET_COLOR;
+        sendData.Cmd = TCP_GET_ALL;
         m_socket.SendData(sendData);
-
-        //QMap<QString, uint8_t>::iterator it; //遍历map  
-        //for (it = m_cmdMap.begin(); it != m_cmdMap.end(); ++it) 
-        //{
-        //    sendData.Cmd = it.value() + 1;
-        //    m_socket.SendData(sendData);
-        //    cv::waitKey(10);
-        //}
+        mp_debugTimer->start();
     }
     else
     {
@@ -86,6 +82,7 @@ void MainWindow::on_pushButton_clicked()
         ui->lineEdit_port->setEnabled(true);
         ui->lineEdit_send->setEnabled(false);
         changeStatusOfUI(false);
+        mp_debugTimer->stop();
     }
 }
 
@@ -99,12 +96,27 @@ void MainWindow::saveSshPasswd(QString user, QString passwd)
 void MainWindow::on_lineEdit_send_returnPressed()
 {
     m_socket.SendData(ui->lineEdit_send->text());
+    if (ui->lineEdit_send->text() == "debug")
+    {
+        S_SendProtocol sendData = {};
+        sendData.HeadStart = 0xaa;
+        sendData.HeadEnd = 0xbb;
+        sendData.Length = sizeof(sendData);
+        sendData.Cmd = TCP_GET_COLOR;
+        m_socket.SendData(sendData);
+        changeStatusOfUI(true);
+    }
+    else if (ui->lineEdit_send->text() == "release")
+    {
+        changeStatusOfUI(false);
+    }
     ui->lineEdit_send->clear();
 }
 
 void MainWindow::getSocketDataShow(QString data)
 {
-    ui->textBrowser_recv->append(data);
+    debugInfo.append(data);
+    debugInfo.append("\n");
     if (data == "Connect Break Off" && ui->pushButton->text() == "断开")
     {
         QMessageBox::information(NULL, "错误", "设备异常掉线", QMessageBox::Yes);
@@ -114,36 +126,18 @@ void MainWindow::getSocketDataShow(QString data)
 
 void MainWindow::getSocketImageShow(char* data, int length)
 {
-    if (m_showFlagImage)
-    {
-        cv::Mat img_decode;
-        std::vector<uchar> data_encode;
-        data_encode.insert(data_encode.end(), data, data + length);
-        img_decode = cv::imdecode(data_encode, CV_LOAD_IMAGE_COLOR);
-        cv::cvtColor(img_decode, img_decode, CV_BGR2RGB);//BGR convert to RGB
-        cv::resize(img_decode, img_decode, cv::Size(ui->Image_frame->width(), ui->Image_frame->height()), 0, 0, cv::INTER_NEAREST);
-        QImage Qtemp = QImage((const unsigned char*)(img_decode.data), img_decode.cols, img_decode.rows, img_decode.step, QImage::Format_RGB888);
-        ui->Image_frame->setPixmap(QPixmap::fromImage(Qtemp));
-        ui->Image_frame->show();
-        m_showFlagImage = false;
-    }
+    imageMutex.lock();
+    imageEncode.clear();
+    imageEncode.insert(imageEncode.end(), data, data + length);
+    imageMutex.unlock();
 }
 
 void MainWindow::getSocketBinaryShow(char* data, int length)
 {
-    if (m_showFlagBinary)
-    {
-        cv::Mat img_decode;
-        std::vector<uchar> data_encode;
-        data_encode.insert(data_encode.end(), data, data + length);
-        img_decode = cv::imdecode(data_encode, CV_LOAD_IMAGE_COLOR);
-        cv::cvtColor(img_decode, img_decode, CV_BGR2RGB);//BGR convert to RGB
-        cv::resize(img_decode, img_decode, cv::Size(ui->Image_binary->width(), ui->Image_binary->height()), 0, 0, cv::INTER_NEAREST);
-        QImage Qtemp = QImage((const unsigned char*)(img_decode.data), img_decode.cols, img_decode.rows, img_decode.step, QImage::Format_RGB888);
-        ui->Image_binary->setPixmap(QPixmap::fromImage(Qtemp));
-        ui->Image_binary->show();
-        m_showFlagBinary = false;
-    }
+    imageMutex.lock();
+    binaryEncode.clear();
+    binaryEncode.insert(binaryEncode.end(), data, data + length);
+    imageMutex.unlock();
 }
 
 void MainWindow::changeStatusOfUI(bool value)
@@ -153,6 +147,49 @@ void MainWindow::changeStatusOfUI(bool value)
 
 void MainWindow::handleTimeout()
 {
-    m_showFlagBinary = true;
-    m_showFlagImage = true;
+    static int count;
+    if (m_socket.Recvicing)
+    {
+        if (count++ < 50)
+        {
+            m_socket.Recvicing = false;
+            return;
+        }
+    }
+    else
+    {
+        count = 0;
+    }
+    imageMutex.lock();
+    if (imageEncode.size() != 0)
+    {
+        cv::Mat img_decode = cv::imdecode(imageEncode, CV_LOAD_IMAGE_COLOR);
+        cv::cvtColor(img_decode, img_decode, CV_BGR2RGB);//BGR convert to RGB
+        cv::resize(img_decode, img_decode, cv::Size(ui->Image_frame->width(), ui->Image_frame->height()), 0, 0, cv::INTER_NEAREST);
+        QImage Qtemp = QImage((const unsigned char*)(img_decode.data), img_decode.cols, img_decode.rows, img_decode.step, QImage::Format_RGB888);
+        ui->Image_frame->setPixmap(QPixmap::fromImage(Qtemp));
+        ui->Image_frame->show();
+    }
+    imageMutex.unlock();
+
+    binaryMutex.lock();
+    if (binaryEncode.size() != 0)
+    {
+        cv::Mat img_decode = cv::imdecode(binaryEncode, CV_LOAD_IMAGE_COLOR);
+        cv::cvtColor(img_decode, img_decode, CV_BGR2RGB);//BGR convert to RGB
+        cv::resize(img_decode, img_decode, cv::Size(ui->Image_binary->width(), ui->Image_binary->height()), 0, 0, cv::INTER_NEAREST);
+        QImage Qtemp = QImage((const unsigned char*)(img_decode.data), img_decode.cols, img_decode.rows, img_decode.step, QImage::Format_RGB888);
+        ui->Image_binary->setPixmap(QPixmap::fromImage(Qtemp));
+        ui->Image_binary->show();
+    }
+    binaryMutex.unlock();
+}
+
+void MainWindow::handleDebugTimeout()
+{
+    if (debugInfo != "")
+    {
+        ui->textBrowser_recv->append(debugInfo);
+        debugInfo = "";
+    }
 }

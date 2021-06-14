@@ -71,6 +71,7 @@ int32_t C_SocketOperation::SendData(S_SendProtocol data)
 void C_SocketOperation::socketReadData()
 {
 	//读取缓冲区数据
+	Recvicing = true;
 	QByteArray buffer = m_tcp->readAll();
 	S_SendProtocol* recvData = (S_SendProtocol*)buffer.data();
 	QString str = QString(buffer);
@@ -79,7 +80,7 @@ void C_SocketOperation::socketReadData()
 		int32_t value = 0;
 		memcpy(&value, recvData->value, sizeof(value));
 		emit sigSocketSetSliderValue(recvData->Cmd, value);
-		str = QString("Protocol, CMD: %1, Value: %2").arg(QString::number(recvData->Cmd)).arg(value);
+		str = QString("Protocol, CMD: %1, Value: %2").arg(QString("%1").arg(recvData->Cmd, 4, 16, QChar('0'))).arg(value);
 	}
 	emit sigSocketRecvData(str);
 }

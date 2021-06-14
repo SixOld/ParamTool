@@ -5,6 +5,7 @@
 #include "ParamSave.h"
 #include "SocketOperation.h"
 #include <QTimer>
+#include <QMutex>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,18 +30,25 @@ private slots:
     void getSocketImageShow(char* data, int length);
     void getSocketBinaryShow(char* data, int length);
     void handleTimeout();
+    void handleDebugTimeout();
     void changeSliderValue(uint8_t cmd, int value);
+    void setDebugOutput(int value);
 
 private:
     void initColorSlider(void);
     void changeStatusOfUI(bool value);
+    void cmdMapInit();
+    void initCheckBox();
     Ui::MainWindow *ui;
-    QTimer* m_pTimer = nullptr;
+    QTimer* mp_imageTimer = nullptr;
+    QTimer* mp_debugTimer = nullptr;
     C_ParamSave m_param;
     C_SocketOperation m_socket;
-    bool m_showFlagImage;
-    bool m_showFlagBinary;
-    QMap<QString, uint8_t> m_cmdMap; //定义一个QMap对象  
-
+    QMap<QString, uint8_t> m_cmdMap; //定义一个QMap对象
+    QMutex imageMutex;
+    QMutex binaryMutex;
+    QString debugInfo;
+    std::vector<uchar> imageEncode;
+    std::vector<uchar> binaryEncode;
 };
 #endif // MAINWINDOW_H

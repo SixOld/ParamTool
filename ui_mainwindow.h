@@ -1,17 +1,18 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindowseBEsm.ui'
+** Form generated from reading UI file 'mainwindowhgourC.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.12.10
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef MAINWINDOWSEBESM_H
-#define MAINWINDOWSEBESM_H
+#ifndef MAINWINDOWHGOURC_H
+#define MAINWINDOWHGOURC_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QGroupBox>
 #include <QtWidgets/QHBoxLayout>
@@ -89,98 +90,117 @@ public:
     QLabel *label_10;
     QSlider *horizontalSlider_lightBarAngleMin;
     QLineEdit *lineEdit_lightBarAngleMin;
+    QCheckBox *checkBox_lightBarAngleMin;
     QSpacerItem *verticalSpacer_7;
     QHBoxLayout *horizontalLayout_15;
     QLabel *label_11;
     QSlider *horizontalSlider_lightBarAngleMax;
     QLineEdit *lineEdit_lightBarAngleMax;
+    QCheckBox *checkBox_lightBarAngleMax;
     QSpacerItem *verticalSpacer_8;
     QHBoxLayout *horizontalLayout_16;
     QLabel *label_12;
     QSlider *horizontalSlider_lightBarAreaMin;
     QLineEdit *lineEdit_lightBarAreaMin;
+    QCheckBox *checkBox_lightBarAreaMin;
     QSpacerItem *verticalSpacer_9;
     QHBoxLayout *horizontalLayout_17;
     QLabel *label_13;
     QSlider *horizontalSlider_lightBarAreaMax;
     QLineEdit *lineEdit_lightBarAreaMax;
+    QCheckBox *checkBox_lightBarAreaMax;
     QSpacerItem *verticalSpacer_10;
     QHBoxLayout *horizontalLayout_18;
     QLabel *label_14;
     QSlider *horizontalSlider_lightBarPropMin;
     QLineEdit *lineEdit_lightBarPropMin;
+    QCheckBox *checkBox_lightBarPropMin;
     QSpacerItem *verticalSpacer_11;
     QHBoxLayout *horizontalLayout_19;
     QLabel *label_15;
     QSlider *horizontalSlider_lightBarPropMax;
     QLineEdit *lineEdit_lightBarPropMax;
+    QCheckBox *checkBox_lightBarPropMax;
     QSpacerItem *verticalSpacer_12;
     QHBoxLayout *horizontalLayout_20;
     QLabel *label_16;
     QSlider *horizontalSlider_lightBarAngleDiff;
     QLineEdit *lineEdit_lightBarAngleDiff;
+    QCheckBox *checkBox_lightBarAngleDiff;
     QSpacerItem *verticalSpacer_16;
     QHBoxLayout *horizontalLayout_21;
     QLabel *label_17;
     QSlider *horizontalSlider_lightBarAreaDiff;
     QLineEdit *lineEdit_lightBarAreaDiff;
+    QCheckBox *checkBox_lightBarAreaDiff;
     QSpacerItem *verticalSpacer_17;
     QHBoxLayout *horizontalLayout_22;
     QLabel *label_18;
     QSlider *horizontalSlider_lightBarlongPropMax;
     QLineEdit *lineEdit_lightBarlongPropMax;
+    QCheckBox *checkBox_lightBarlongPropMax;
     QSpacerItem *verticalSpacer_15;
     QHBoxLayout *horizontalLayout_23;
     QLabel *label_19;
     QSlider *horizontalSlider_lightBarlongPropMin;
     QLineEdit *lineEdit_lightBarlongPropMin;
+    QCheckBox *checkBox_lightBarlongPropMin;
     QWidget *tabWidgetPageArmor;
     QVBoxLayout *verticalLayout_8;
     QVBoxLayout *verticalLayout_7;
     QHBoxLayout *horizontalLayout_36;
     QLabel *label_32;
-    QSlider *horizontalSlider_armorAngleMin_2;
-    QLineEdit *lineEdit_armorAngleMin_2;
+    QSlider *horizontalSlider_armorAngleMin;
+    QLineEdit *lineEdit_armorAngleMin;
+    QCheckBox *checkBox_armorAngleMin;
     QSpacerItem *verticalSpacer_13;
     QHBoxLayout *horizontalLayout_26;
     QLabel *label_22;
-    QSlider *horizontalSlider_armorAreaMin_2;
-    QLineEdit *lineEdit_armorAreaMin_2;
+    QSlider *horizontalSlider_armorAreaMin;
+    QLineEdit *lineEdit_armorAreaMin;
+    QCheckBox *checkBox_armorAreaMin;
     QSpacerItem *verticalSpacer_18;
     QHBoxLayout *horizontalLayout_35;
     QLabel *label_31;
-    QSlider *horizontalSlider_armorAreaMax_2;
-    QLineEdit *lineEdit_armorAreaMax_2;
+    QSlider *horizontalSlider_armorAreaMax;
+    QLineEdit *lineEdit_armorAreaMax;
+    QCheckBox *checkBox_armorAreaMax;
     QSpacerItem *verticalSpacer_19;
     QHBoxLayout *horizontalLayout_29;
     QLabel *label_25;
     QSlider *horizontalSlider_smallArmorPropMin;
     QLineEdit *lineEdit_smallArmorPropMin;
+    QCheckBox *checkBox_smallArmorPropMin;
     QSpacerItem *verticalSpacer_20;
     QHBoxLayout *horizontalLayout_30;
     QLabel *label_26;
     QSlider *horizontalSlider_smallArmorPropMax;
     QLineEdit *lineEdit_smallArmorPropMax;
+    QCheckBox *checkBox_smallArmorPropMax;
     QSpacerItem *verticalSpacer_21;
     QHBoxLayout *horizontalLayout_31;
     QLabel *label_27;
     QSlider *horizontalSlider_bigArmorPropMin;
     QLineEdit *lineEdit_bigArmorPropMin;
+    QCheckBox *checkBox_bigArmorPropMin;
     QSpacerItem *verticalSpacer_22;
     QHBoxLayout *horizontalLayout_32;
     QLabel *label_28;
     QSlider *horizontalSlider_bigArmorPropMax;
     QLineEdit *lineEdit_bigArmorPropMax;
+    QCheckBox *checkBox_bigArmorPropMax;
     QSpacerItem *verticalSpacer_23;
     QHBoxLayout *horizontalLayout_33;
     QLabel *label_29;
     QSlider *horizontalSlider_smallDistanceParam;
     QLineEdit *lineEdit_smallDistanceParam;
+    QCheckBox *checkBox_smallDistanceParam;
     QSpacerItem *verticalSpacer_24;
     QHBoxLayout *horizontalLayout_34;
     QLabel *label_30;
     QSlider *horizontalSlider_bigDistanceParam;
     QLineEdit *lineEdit_bigDistanceParam;
+    QCheckBox *checkBox_bigDistanceParam;
     QGroupBox *groupBox_3;
     QGridLayout *gridLayout;
     QVBoxLayout *verticalLayout_5;
@@ -265,8 +285,8 @@ public:
 
         lineEdit_color = new QLineEdit(tabWidgetPageColor);
         lineEdit_color->setObjectName(QString::fromUtf8("lineEdit_color"));
-        lineEdit_color->setMinimumSize(QSize(25, 0));
-        lineEdit_color->setMaximumSize(QSize(25, 16777215));
+        lineEdit_color->setMinimumSize(QSize(35, 0));
+        lineEdit_color->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_7->addWidget(lineEdit_color);
 
@@ -292,8 +312,8 @@ public:
 
         lineEdit_hMax = new QLineEdit(tabWidgetPageColor);
         lineEdit_hMax->setObjectName(QString::fromUtf8("lineEdit_hMax"));
-        lineEdit_hMax->setMinimumSize(QSize(25, 0));
-        lineEdit_hMax->setMaximumSize(QSize(25, 16777215));
+        lineEdit_hMax->setMinimumSize(QSize(35, 0));
+        lineEdit_hMax->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_8->addWidget(lineEdit_hMax);
 
@@ -319,8 +339,8 @@ public:
 
         lineEdit_hMin = new QLineEdit(tabWidgetPageColor);
         lineEdit_hMin->setObjectName(QString::fromUtf8("lineEdit_hMin"));
-        lineEdit_hMin->setMinimumSize(QSize(25, 0));
-        lineEdit_hMin->setMaximumSize(QSize(25, 16777215));
+        lineEdit_hMin->setMinimumSize(QSize(35, 0));
+        lineEdit_hMin->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_9->addWidget(lineEdit_hMin);
 
@@ -346,8 +366,8 @@ public:
 
         lineEdit_sMax = new QLineEdit(tabWidgetPageColor);
         lineEdit_sMax->setObjectName(QString::fromUtf8("lineEdit_sMax"));
-        lineEdit_sMax->setMinimumSize(QSize(25, 0));
-        lineEdit_sMax->setMaximumSize(QSize(25, 16777215));
+        lineEdit_sMax->setMinimumSize(QSize(35, 0));
+        lineEdit_sMax->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_10->addWidget(lineEdit_sMax);
 
@@ -373,8 +393,8 @@ public:
 
         lineEdit_sMin = new QLineEdit(tabWidgetPageColor);
         lineEdit_sMin->setObjectName(QString::fromUtf8("lineEdit_sMin"));
-        lineEdit_sMin->setMinimumSize(QSize(25, 0));
-        lineEdit_sMin->setMaximumSize(QSize(25, 16777215));
+        lineEdit_sMin->setMinimumSize(QSize(35, 0));
+        lineEdit_sMin->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_11->addWidget(lineEdit_sMin);
 
@@ -400,8 +420,8 @@ public:
 
         lineEdit_vMax = new QLineEdit(tabWidgetPageColor);
         lineEdit_vMax->setObjectName(QString::fromUtf8("lineEdit_vMax"));
-        lineEdit_vMax->setMinimumSize(QSize(25, 0));
-        lineEdit_vMax->setMaximumSize(QSize(25, 16777215));
+        lineEdit_vMax->setMinimumSize(QSize(35, 0));
+        lineEdit_vMax->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_12->addWidget(lineEdit_vMax);
 
@@ -427,8 +447,8 @@ public:
 
         lineEdit_vMin = new QLineEdit(tabWidgetPageColor);
         lineEdit_vMin->setObjectName(QString::fromUtf8("lineEdit_vMin"));
-        lineEdit_vMin->setMinimumSize(QSize(25, 0));
-        lineEdit_vMin->setMaximumSize(QSize(25, 16777215));
+        lineEdit_vMin->setMinimumSize(QSize(35, 0));
+        lineEdit_vMin->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_13->addWidget(lineEdit_vMin);
 
@@ -462,10 +482,15 @@ public:
 
         lineEdit_lightBarAngleMin = new QLineEdit(tabWidgetPageShape);
         lineEdit_lightBarAngleMin->setObjectName(QString::fromUtf8("lineEdit_lightBarAngleMin"));
-        lineEdit_lightBarAngleMin->setMinimumSize(QSize(25, 0));
-        lineEdit_lightBarAngleMin->setMaximumSize(QSize(25, 16777215));
+        lineEdit_lightBarAngleMin->setMinimumSize(QSize(35, 0));
+        lineEdit_lightBarAngleMin->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_14->addWidget(lineEdit_lightBarAngleMin);
+
+        checkBox_lightBarAngleMin = new QCheckBox(tabWidgetPageShape);
+        checkBox_lightBarAngleMin->setObjectName(QString::fromUtf8("checkBox_lightBarAngleMin"));
+
+        horizontalLayout_14->addWidget(checkBox_lightBarAngleMin);
 
 
         verticalLayout_6->addLayout(horizontalLayout_14);
@@ -491,10 +516,15 @@ public:
 
         lineEdit_lightBarAngleMax = new QLineEdit(tabWidgetPageShape);
         lineEdit_lightBarAngleMax->setObjectName(QString::fromUtf8("lineEdit_lightBarAngleMax"));
-        lineEdit_lightBarAngleMax->setMinimumSize(QSize(25, 0));
-        lineEdit_lightBarAngleMax->setMaximumSize(QSize(25, 16777215));
+        lineEdit_lightBarAngleMax->setMinimumSize(QSize(35, 0));
+        lineEdit_lightBarAngleMax->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_15->addWidget(lineEdit_lightBarAngleMax);
+
+        checkBox_lightBarAngleMax = new QCheckBox(tabWidgetPageShape);
+        checkBox_lightBarAngleMax->setObjectName(QString::fromUtf8("checkBox_lightBarAngleMax"));
+
+        horizontalLayout_15->addWidget(checkBox_lightBarAngleMax);
 
 
         verticalLayout_6->addLayout(horizontalLayout_15);
@@ -520,10 +550,15 @@ public:
 
         lineEdit_lightBarAreaMin = new QLineEdit(tabWidgetPageShape);
         lineEdit_lightBarAreaMin->setObjectName(QString::fromUtf8("lineEdit_lightBarAreaMin"));
-        lineEdit_lightBarAreaMin->setMinimumSize(QSize(25, 0));
-        lineEdit_lightBarAreaMin->setMaximumSize(QSize(25, 16777215));
+        lineEdit_lightBarAreaMin->setMinimumSize(QSize(35, 0));
+        lineEdit_lightBarAreaMin->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_16->addWidget(lineEdit_lightBarAreaMin);
+
+        checkBox_lightBarAreaMin = new QCheckBox(tabWidgetPageShape);
+        checkBox_lightBarAreaMin->setObjectName(QString::fromUtf8("checkBox_lightBarAreaMin"));
+
+        horizontalLayout_16->addWidget(checkBox_lightBarAreaMin);
 
 
         verticalLayout_6->addLayout(horizontalLayout_16);
@@ -549,10 +584,15 @@ public:
 
         lineEdit_lightBarAreaMax = new QLineEdit(tabWidgetPageShape);
         lineEdit_lightBarAreaMax->setObjectName(QString::fromUtf8("lineEdit_lightBarAreaMax"));
-        lineEdit_lightBarAreaMax->setMinimumSize(QSize(25, 0));
-        lineEdit_lightBarAreaMax->setMaximumSize(QSize(25, 16777215));
+        lineEdit_lightBarAreaMax->setMinimumSize(QSize(35, 0));
+        lineEdit_lightBarAreaMax->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_17->addWidget(lineEdit_lightBarAreaMax);
+
+        checkBox_lightBarAreaMax = new QCheckBox(tabWidgetPageShape);
+        checkBox_lightBarAreaMax->setObjectName(QString::fromUtf8("checkBox_lightBarAreaMax"));
+
+        horizontalLayout_17->addWidget(checkBox_lightBarAreaMax);
 
 
         verticalLayout_6->addLayout(horizontalLayout_17);
@@ -578,10 +618,15 @@ public:
 
         lineEdit_lightBarPropMin = new QLineEdit(tabWidgetPageShape);
         lineEdit_lightBarPropMin->setObjectName(QString::fromUtf8("lineEdit_lightBarPropMin"));
-        lineEdit_lightBarPropMin->setMinimumSize(QSize(25, 0));
-        lineEdit_lightBarPropMin->setMaximumSize(QSize(25, 16777215));
+        lineEdit_lightBarPropMin->setMinimumSize(QSize(35, 0));
+        lineEdit_lightBarPropMin->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_18->addWidget(lineEdit_lightBarPropMin);
+
+        checkBox_lightBarPropMin = new QCheckBox(tabWidgetPageShape);
+        checkBox_lightBarPropMin->setObjectName(QString::fromUtf8("checkBox_lightBarPropMin"));
+
+        horizontalLayout_18->addWidget(checkBox_lightBarPropMin);
 
 
         verticalLayout_6->addLayout(horizontalLayout_18);
@@ -607,10 +652,15 @@ public:
 
         lineEdit_lightBarPropMax = new QLineEdit(tabWidgetPageShape);
         lineEdit_lightBarPropMax->setObjectName(QString::fromUtf8("lineEdit_lightBarPropMax"));
-        lineEdit_lightBarPropMax->setMinimumSize(QSize(25, 0));
-        lineEdit_lightBarPropMax->setMaximumSize(QSize(25, 16777215));
+        lineEdit_lightBarPropMax->setMinimumSize(QSize(35, 0));
+        lineEdit_lightBarPropMax->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_19->addWidget(lineEdit_lightBarPropMax);
+
+        checkBox_lightBarPropMax = new QCheckBox(tabWidgetPageShape);
+        checkBox_lightBarPropMax->setObjectName(QString::fromUtf8("checkBox_lightBarPropMax"));
+
+        horizontalLayout_19->addWidget(checkBox_lightBarPropMax);
 
 
         verticalLayout_6->addLayout(horizontalLayout_19);
@@ -636,10 +686,15 @@ public:
 
         lineEdit_lightBarAngleDiff = new QLineEdit(tabWidgetPageShape);
         lineEdit_lightBarAngleDiff->setObjectName(QString::fromUtf8("lineEdit_lightBarAngleDiff"));
-        lineEdit_lightBarAngleDiff->setMinimumSize(QSize(25, 0));
-        lineEdit_lightBarAngleDiff->setMaximumSize(QSize(25, 16777215));
+        lineEdit_lightBarAngleDiff->setMinimumSize(QSize(35, 0));
+        lineEdit_lightBarAngleDiff->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_20->addWidget(lineEdit_lightBarAngleDiff);
+
+        checkBox_lightBarAngleDiff = new QCheckBox(tabWidgetPageShape);
+        checkBox_lightBarAngleDiff->setObjectName(QString::fromUtf8("checkBox_lightBarAngleDiff"));
+
+        horizontalLayout_20->addWidget(checkBox_lightBarAngleDiff);
 
 
         verticalLayout_6->addLayout(horizontalLayout_20);
@@ -665,10 +720,15 @@ public:
 
         lineEdit_lightBarAreaDiff = new QLineEdit(tabWidgetPageShape);
         lineEdit_lightBarAreaDiff->setObjectName(QString::fromUtf8("lineEdit_lightBarAreaDiff"));
-        lineEdit_lightBarAreaDiff->setMinimumSize(QSize(25, 0));
-        lineEdit_lightBarAreaDiff->setMaximumSize(QSize(25, 16777215));
+        lineEdit_lightBarAreaDiff->setMinimumSize(QSize(35, 0));
+        lineEdit_lightBarAreaDiff->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_21->addWidget(lineEdit_lightBarAreaDiff);
+
+        checkBox_lightBarAreaDiff = new QCheckBox(tabWidgetPageShape);
+        checkBox_lightBarAreaDiff->setObjectName(QString::fromUtf8("checkBox_lightBarAreaDiff"));
+
+        horizontalLayout_21->addWidget(checkBox_lightBarAreaDiff);
 
 
         verticalLayout_6->addLayout(horizontalLayout_21);
@@ -694,10 +754,15 @@ public:
 
         lineEdit_lightBarlongPropMax = new QLineEdit(tabWidgetPageShape);
         lineEdit_lightBarlongPropMax->setObjectName(QString::fromUtf8("lineEdit_lightBarlongPropMax"));
-        lineEdit_lightBarlongPropMax->setMinimumSize(QSize(25, 0));
-        lineEdit_lightBarlongPropMax->setMaximumSize(QSize(25, 16777215));
+        lineEdit_lightBarlongPropMax->setMinimumSize(QSize(35, 0));
+        lineEdit_lightBarlongPropMax->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_22->addWidget(lineEdit_lightBarlongPropMax);
+
+        checkBox_lightBarlongPropMax = new QCheckBox(tabWidgetPageShape);
+        checkBox_lightBarlongPropMax->setObjectName(QString::fromUtf8("checkBox_lightBarlongPropMax"));
+
+        horizontalLayout_22->addWidget(checkBox_lightBarlongPropMax);
 
 
         verticalLayout_6->addLayout(horizontalLayout_22);
@@ -723,10 +788,15 @@ public:
 
         lineEdit_lightBarlongPropMin = new QLineEdit(tabWidgetPageShape);
         lineEdit_lightBarlongPropMin->setObjectName(QString::fromUtf8("lineEdit_lightBarlongPropMin"));
-        lineEdit_lightBarlongPropMin->setMinimumSize(QSize(25, 0));
-        lineEdit_lightBarlongPropMin->setMaximumSize(QSize(25, 16777215));
+        lineEdit_lightBarlongPropMin->setMinimumSize(QSize(35, 0));
+        lineEdit_lightBarlongPropMin->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_23->addWidget(lineEdit_lightBarlongPropMin);
+
+        checkBox_lightBarlongPropMin = new QCheckBox(tabWidgetPageShape);
+        checkBox_lightBarlongPropMin->setObjectName(QString::fromUtf8("checkBox_lightBarlongPropMin"));
+
+        horizontalLayout_23->addWidget(checkBox_lightBarlongPropMin);
 
 
         verticalLayout_6->addLayout(horizontalLayout_23);
@@ -750,18 +820,23 @@ public:
 
         horizontalLayout_36->addWidget(label_32);
 
-        horizontalSlider_armorAngleMin_2 = new QSlider(tabWidgetPageArmor);
-        horizontalSlider_armorAngleMin_2->setObjectName(QString::fromUtf8("horizontalSlider_armorAngleMin_2"));
-        horizontalSlider_armorAngleMin_2->setOrientation(Qt::Horizontal);
+        horizontalSlider_armorAngleMin = new QSlider(tabWidgetPageArmor);
+        horizontalSlider_armorAngleMin->setObjectName(QString::fromUtf8("horizontalSlider_armorAngleMin"));
+        horizontalSlider_armorAngleMin->setOrientation(Qt::Horizontal);
 
-        horizontalLayout_36->addWidget(horizontalSlider_armorAngleMin_2);
+        horizontalLayout_36->addWidget(horizontalSlider_armorAngleMin);
 
-        lineEdit_armorAngleMin_2 = new QLineEdit(tabWidgetPageArmor);
-        lineEdit_armorAngleMin_2->setObjectName(QString::fromUtf8("lineEdit_armorAngleMin_2"));
-        lineEdit_armorAngleMin_2->setMinimumSize(QSize(25, 0));
-        lineEdit_armorAngleMin_2->setMaximumSize(QSize(25, 16777215));
+        lineEdit_armorAngleMin = new QLineEdit(tabWidgetPageArmor);
+        lineEdit_armorAngleMin->setObjectName(QString::fromUtf8("lineEdit_armorAngleMin"));
+        lineEdit_armorAngleMin->setMinimumSize(QSize(35, 0));
+        lineEdit_armorAngleMin->setMaximumSize(QSize(35, 16777215));
 
-        horizontalLayout_36->addWidget(lineEdit_armorAngleMin_2);
+        horizontalLayout_36->addWidget(lineEdit_armorAngleMin);
+
+        checkBox_armorAngleMin = new QCheckBox(tabWidgetPageArmor);
+        checkBox_armorAngleMin->setObjectName(QString::fromUtf8("checkBox_armorAngleMin"));
+
+        horizontalLayout_36->addWidget(checkBox_armorAngleMin);
 
 
         verticalLayout_7->addLayout(horizontalLayout_36);
@@ -779,18 +854,23 @@ public:
 
         horizontalLayout_26->addWidget(label_22);
 
-        horizontalSlider_armorAreaMin_2 = new QSlider(tabWidgetPageArmor);
-        horizontalSlider_armorAreaMin_2->setObjectName(QString::fromUtf8("horizontalSlider_armorAreaMin_2"));
-        horizontalSlider_armorAreaMin_2->setOrientation(Qt::Horizontal);
+        horizontalSlider_armorAreaMin = new QSlider(tabWidgetPageArmor);
+        horizontalSlider_armorAreaMin->setObjectName(QString::fromUtf8("horizontalSlider_armorAreaMin"));
+        horizontalSlider_armorAreaMin->setOrientation(Qt::Horizontal);
 
-        horizontalLayout_26->addWidget(horizontalSlider_armorAreaMin_2);
+        horizontalLayout_26->addWidget(horizontalSlider_armorAreaMin);
 
-        lineEdit_armorAreaMin_2 = new QLineEdit(tabWidgetPageArmor);
-        lineEdit_armorAreaMin_2->setObjectName(QString::fromUtf8("lineEdit_armorAreaMin_2"));
-        lineEdit_armorAreaMin_2->setMinimumSize(QSize(25, 0));
-        lineEdit_armorAreaMin_2->setMaximumSize(QSize(25, 16777215));
+        lineEdit_armorAreaMin = new QLineEdit(tabWidgetPageArmor);
+        lineEdit_armorAreaMin->setObjectName(QString::fromUtf8("lineEdit_armorAreaMin"));
+        lineEdit_armorAreaMin->setMinimumSize(QSize(35, 0));
+        lineEdit_armorAreaMin->setMaximumSize(QSize(35, 16777215));
 
-        horizontalLayout_26->addWidget(lineEdit_armorAreaMin_2);
+        horizontalLayout_26->addWidget(lineEdit_armorAreaMin);
+
+        checkBox_armorAreaMin = new QCheckBox(tabWidgetPageArmor);
+        checkBox_armorAreaMin->setObjectName(QString::fromUtf8("checkBox_armorAreaMin"));
+
+        horizontalLayout_26->addWidget(checkBox_armorAreaMin);
 
 
         verticalLayout_7->addLayout(horizontalLayout_26);
@@ -808,18 +888,23 @@ public:
 
         horizontalLayout_35->addWidget(label_31);
 
-        horizontalSlider_armorAreaMax_2 = new QSlider(tabWidgetPageArmor);
-        horizontalSlider_armorAreaMax_2->setObjectName(QString::fromUtf8("horizontalSlider_armorAreaMax_2"));
-        horizontalSlider_armorAreaMax_2->setOrientation(Qt::Horizontal);
+        horizontalSlider_armorAreaMax = new QSlider(tabWidgetPageArmor);
+        horizontalSlider_armorAreaMax->setObjectName(QString::fromUtf8("horizontalSlider_armorAreaMax"));
+        horizontalSlider_armorAreaMax->setOrientation(Qt::Horizontal);
 
-        horizontalLayout_35->addWidget(horizontalSlider_armorAreaMax_2);
+        horizontalLayout_35->addWidget(horizontalSlider_armorAreaMax);
 
-        lineEdit_armorAreaMax_2 = new QLineEdit(tabWidgetPageArmor);
-        lineEdit_armorAreaMax_2->setObjectName(QString::fromUtf8("lineEdit_armorAreaMax_2"));
-        lineEdit_armorAreaMax_2->setMinimumSize(QSize(25, 0));
-        lineEdit_armorAreaMax_2->setMaximumSize(QSize(25, 16777215));
+        lineEdit_armorAreaMax = new QLineEdit(tabWidgetPageArmor);
+        lineEdit_armorAreaMax->setObjectName(QString::fromUtf8("lineEdit_armorAreaMax"));
+        lineEdit_armorAreaMax->setMinimumSize(QSize(35, 0));
+        lineEdit_armorAreaMax->setMaximumSize(QSize(35, 16777215));
 
-        horizontalLayout_35->addWidget(lineEdit_armorAreaMax_2);
+        horizontalLayout_35->addWidget(lineEdit_armorAreaMax);
+
+        checkBox_armorAreaMax = new QCheckBox(tabWidgetPageArmor);
+        checkBox_armorAreaMax->setObjectName(QString::fromUtf8("checkBox_armorAreaMax"));
+
+        horizontalLayout_35->addWidget(checkBox_armorAreaMax);
 
 
         verticalLayout_7->addLayout(horizontalLayout_35);
@@ -845,10 +930,15 @@ public:
 
         lineEdit_smallArmorPropMin = new QLineEdit(tabWidgetPageArmor);
         lineEdit_smallArmorPropMin->setObjectName(QString::fromUtf8("lineEdit_smallArmorPropMin"));
-        lineEdit_smallArmorPropMin->setMinimumSize(QSize(25, 0));
-        lineEdit_smallArmorPropMin->setMaximumSize(QSize(25, 16777215));
+        lineEdit_smallArmorPropMin->setMinimumSize(QSize(35, 0));
+        lineEdit_smallArmorPropMin->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_29->addWidget(lineEdit_smallArmorPropMin);
+
+        checkBox_smallArmorPropMin = new QCheckBox(tabWidgetPageArmor);
+        checkBox_smallArmorPropMin->setObjectName(QString::fromUtf8("checkBox_smallArmorPropMin"));
+
+        horizontalLayout_29->addWidget(checkBox_smallArmorPropMin);
 
 
         verticalLayout_7->addLayout(horizontalLayout_29);
@@ -874,10 +964,15 @@ public:
 
         lineEdit_smallArmorPropMax = new QLineEdit(tabWidgetPageArmor);
         lineEdit_smallArmorPropMax->setObjectName(QString::fromUtf8("lineEdit_smallArmorPropMax"));
-        lineEdit_smallArmorPropMax->setMinimumSize(QSize(25, 0));
-        lineEdit_smallArmorPropMax->setMaximumSize(QSize(25, 16777215));
+        lineEdit_smallArmorPropMax->setMinimumSize(QSize(35, 0));
+        lineEdit_smallArmorPropMax->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_30->addWidget(lineEdit_smallArmorPropMax);
+
+        checkBox_smallArmorPropMax = new QCheckBox(tabWidgetPageArmor);
+        checkBox_smallArmorPropMax->setObjectName(QString::fromUtf8("checkBox_smallArmorPropMax"));
+
+        horizontalLayout_30->addWidget(checkBox_smallArmorPropMax);
 
 
         verticalLayout_7->addLayout(horizontalLayout_30);
@@ -903,10 +998,15 @@ public:
 
         lineEdit_bigArmorPropMin = new QLineEdit(tabWidgetPageArmor);
         lineEdit_bigArmorPropMin->setObjectName(QString::fromUtf8("lineEdit_bigArmorPropMin"));
-        lineEdit_bigArmorPropMin->setMinimumSize(QSize(25, 0));
-        lineEdit_bigArmorPropMin->setMaximumSize(QSize(25, 16777215));
+        lineEdit_bigArmorPropMin->setMinimumSize(QSize(35, 0));
+        lineEdit_bigArmorPropMin->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_31->addWidget(lineEdit_bigArmorPropMin);
+
+        checkBox_bigArmorPropMin = new QCheckBox(tabWidgetPageArmor);
+        checkBox_bigArmorPropMin->setObjectName(QString::fromUtf8("checkBox_bigArmorPropMin"));
+
+        horizontalLayout_31->addWidget(checkBox_bigArmorPropMin);
 
 
         verticalLayout_7->addLayout(horizontalLayout_31);
@@ -932,10 +1032,15 @@ public:
 
         lineEdit_bigArmorPropMax = new QLineEdit(tabWidgetPageArmor);
         lineEdit_bigArmorPropMax->setObjectName(QString::fromUtf8("lineEdit_bigArmorPropMax"));
-        lineEdit_bigArmorPropMax->setMinimumSize(QSize(25, 0));
-        lineEdit_bigArmorPropMax->setMaximumSize(QSize(25, 16777215));
+        lineEdit_bigArmorPropMax->setMinimumSize(QSize(35, 0));
+        lineEdit_bigArmorPropMax->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_32->addWidget(lineEdit_bigArmorPropMax);
+
+        checkBox_bigArmorPropMax = new QCheckBox(tabWidgetPageArmor);
+        checkBox_bigArmorPropMax->setObjectName(QString::fromUtf8("checkBox_bigArmorPropMax"));
+
+        horizontalLayout_32->addWidget(checkBox_bigArmorPropMax);
 
 
         verticalLayout_7->addLayout(horizontalLayout_32);
@@ -961,10 +1066,15 @@ public:
 
         lineEdit_smallDistanceParam = new QLineEdit(tabWidgetPageArmor);
         lineEdit_smallDistanceParam->setObjectName(QString::fromUtf8("lineEdit_smallDistanceParam"));
-        lineEdit_smallDistanceParam->setMinimumSize(QSize(25, 0));
-        lineEdit_smallDistanceParam->setMaximumSize(QSize(25, 16777215));
+        lineEdit_smallDistanceParam->setMinimumSize(QSize(35, 0));
+        lineEdit_smallDistanceParam->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_33->addWidget(lineEdit_smallDistanceParam);
+
+        checkBox_smallDistanceParam = new QCheckBox(tabWidgetPageArmor);
+        checkBox_smallDistanceParam->setObjectName(QString::fromUtf8("checkBox_smallDistanceParam"));
+
+        horizontalLayout_33->addWidget(checkBox_smallDistanceParam);
 
 
         verticalLayout_7->addLayout(horizontalLayout_33);
@@ -990,10 +1100,15 @@ public:
 
         lineEdit_bigDistanceParam = new QLineEdit(tabWidgetPageArmor);
         lineEdit_bigDistanceParam->setObjectName(QString::fromUtf8("lineEdit_bigDistanceParam"));
-        lineEdit_bigDistanceParam->setMinimumSize(QSize(25, 0));
-        lineEdit_bigDistanceParam->setMaximumSize(QSize(25, 16777215));
+        lineEdit_bigDistanceParam->setMinimumSize(QSize(35, 0));
+        lineEdit_bigDistanceParam->setMaximumSize(QSize(35, 16777215));
 
         horizontalLayout_34->addWidget(lineEdit_bigDistanceParam);
+
+        checkBox_bigDistanceParam = new QCheckBox(tabWidgetPageArmor);
+        checkBox_bigDistanceParam->setObjectName(QString::fromUtf8("checkBox_bigDistanceParam"));
+
+        horizontalLayout_34->addWidget(checkBox_bigDistanceParam);
 
 
         verticalLayout_7->addLayout(horizontalLayout_34);
@@ -1099,7 +1214,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1121,26 +1236,45 @@ public:
         label_9->setText(QApplication::translate("MainWindow", "V_Min", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tabWidgetPageColor), QApplication::translate("MainWindow", "\351\242\234\350\211\262", nullptr));
         label_10->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\350\247\222\345\272\246\346\234\200\345\260\217\345\200\2740.0", nullptr));
+        checkBox_lightBarAngleMin->setText(QString());
         label_11->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\350\247\222\345\272\246\346\234\200\345\244\247\345\200\2740.0", nullptr));
+        checkBox_lightBarAngleMax->setText(QString());
         label_12->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\351\235\242\347\247\257\346\234\200\345\260\217\345\200\274", nullptr));
+        checkBox_lightBarAreaMin->setText(QString());
         label_13->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\351\235\242\347\247\257\346\234\200\345\244\247\345\200\274", nullptr));
+        checkBox_lightBarAreaMax->setText(QString());
         label_14->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\351\225\277\345\256\275\346\257\224\346\234\200\345\260\217\345\200\2740.00", nullptr));
+        checkBox_lightBarPropMin->setText(QString());
         label_15->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\351\225\277\345\256\275\346\257\224\346\234\200\345\244\247\345\200\2740.00", nullptr));
+        checkBox_lightBarPropMax->setText(QString());
         label_16->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\350\247\222\345\272\246\345\267\2560.0", nullptr));
+        checkBox_lightBarAngleDiff->setText(QString());
         label_17->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\351\235\242\347\247\257\345\267\256", nullptr));
-        label_18->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\351\225\277\351\225\277\346\257\224\346\234\200\345\244\247\345\200\2740.00", nullptr));
-        label_19->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\351\225\277\351\225\277\346\257\224\346\234\200\345\260\217\345\200\2740.00", nullptr));
+        checkBox_lightBarAreaDiff->setText(QString());
+        label_18->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\351\253\230\345\272\246\346\257\224\346\234\200\345\244\247\345\200\2740.00", nullptr));
+        checkBox_lightBarlongPropMax->setText(QString());
+        label_19->setText(QApplication::translate("MainWindow", "\347\201\257\346\235\241\351\253\230\345\272\246\346\257\224\346\234\200\345\260\217\345\200\2740.00", nullptr));
+        checkBox_lightBarlongPropMin->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(tabWidgetPageShape), QApplication::translate("MainWindow", "\347\201\257\346\235\241", nullptr));
         label_32->setText(QApplication::translate("MainWindow", "\350\243\205\347\224\262\350\247\222\345\272\246\346\234\200\345\260\217\345\200\2740.0", nullptr));
+        checkBox_armorAngleMin->setText(QString());
         label_22->setText(QApplication::translate("MainWindow", "\350\243\205\347\224\262\351\235\242\347\247\257\346\234\200\345\260\217\345\200\274", nullptr));
+        checkBox_armorAreaMin->setText(QString());
         label_31->setText(QApplication::translate("MainWindow", "\350\243\205\347\224\262\351\235\242\347\247\257\346\234\200\345\244\247\345\200\274", nullptr));
+        checkBox_armorAreaMax->setText(QString());
         label_25->setText(QApplication::translate("MainWindow", "\345\260\217\350\243\205\347\224\262\351\225\277\345\256\275\346\257\224\346\234\200\345\260\217\345\200\2740.00", nullptr));
+        checkBox_smallArmorPropMin->setText(QString());
         label_26->setText(QApplication::translate("MainWindow", "\345\260\217\350\243\205\347\224\262\351\225\277\345\256\275\346\257\224\346\234\200\345\244\247\345\200\2740.00", nullptr));
+        checkBox_smallArmorPropMax->setText(QString());
         label_27->setText(QApplication::translate("MainWindow", "\345\244\247\350\243\205\347\224\262\351\225\277\345\256\275\346\257\224\346\234\200\345\260\217\345\200\2740.00", nullptr));
+        checkBox_bigArmorPropMin->setText(QString());
         label_28->setText(QApplication::translate("MainWindow", "\345\244\247\350\243\205\347\224\262\351\225\277\345\256\275\346\257\224\346\234\200\345\244\247\345\200\2740.00", nullptr));
+        checkBox_bigArmorPropMax->setText(QString());
         label_29->setText(QApplication::translate("MainWindow", "\345\260\217\350\243\205\347\224\262\350\267\235\347\246\273\345\217\202\346\225\2600.00", nullptr));
+        checkBox_smallDistanceParam->setText(QString());
         label_30->setText(QApplication::translate("MainWindow", "\345\244\247\350\243\205\347\224\262\350\267\235\347\246\273\345\217\202\346\225\2600.00", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tabWidgetPageArmor), QApplication::translate("MainWindow", "\345\275\242\347\212\2661", nullptr));
+        checkBox_bigDistanceParam->setText(QString());
+        tabWidget->setTabText(tabWidget->indexOf(tabWidgetPageArmor), QApplication::translate("MainWindow", "\350\243\205\347\224\262", nullptr));
         groupBox_3->setTitle(QString());
         label->setText(QApplication::translate("MainWindow", "IP", nullptr));
         label_2->setText(QApplication::translate("MainWindow", "Port", nullptr));
@@ -1156,4 +1290,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // MAINWINDOWSEBESM_H
+#endif // MAINWINDOWHGOURC_H
