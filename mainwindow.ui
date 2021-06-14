@@ -105,6 +105,11 @@
                     <layout class="QHBoxLayout" name="horizontalLayout_7">
                      <item>
                       <widget class="QLabel" name="label_3">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>红/蓝</string>
                        </property>
@@ -152,6 +157,11 @@
                     <layout class="QHBoxLayout" name="horizontalLayout_8">
                      <item>
                       <widget class="QLabel" name="label_4">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>H_Max</string>
                        </property>
@@ -199,6 +209,11 @@
                     <layout class="QHBoxLayout" name="horizontalLayout_9">
                      <item>
                       <widget class="QLabel" name="label_5">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>H_Min</string>
                        </property>
@@ -246,6 +261,11 @@
                     <layout class="QHBoxLayout" name="horizontalLayout_10">
                      <item>
                       <widget class="QLabel" name="label_6">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>S_Max</string>
                        </property>
@@ -293,6 +313,11 @@
                     <layout class="QHBoxLayout" name="horizontalLayout_11">
                      <item>
                       <widget class="QLabel" name="label_7">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>S_Min</string>
                        </property>
@@ -340,6 +365,11 @@
                     <layout class="QHBoxLayout" name="horizontalLayout_12">
                      <item>
                       <widget class="QLabel" name="label_8">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>V_Max</string>
                        </property>
@@ -387,6 +417,11 @@
                     <layout class="QHBoxLayout" name="horizontalLayout_13">
                      <item>
                       <widget class="QLabel" name="label_9">
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>V_Min</string>
                        </property>
@@ -443,6 +478,11 @@
                          <width>120</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>灯条角度最小值0.0</string>
@@ -510,6 +550,11 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>灯条角度最大值0.0</string>
                        </property>
@@ -575,6 +620,11 @@
                          <width>120</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>灯条面积最小值</string>
@@ -642,6 +692,11 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>灯条面积最大值</string>
                        </property>
@@ -707,6 +762,11 @@
                          <width>120</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>灯条长宽比最小值0.00</string>
@@ -774,6 +834,11 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>灯条长宽比最大值0.00</string>
                        </property>
@@ -839,6 +904,11 @@
                          <width>120</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>灯条角度差0.0</string>
@@ -906,6 +976,11 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>灯条面积差</string>
                        </property>
@@ -971,6 +1046,11 @@
                          <width>120</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>灯条高度比最大值0.00</string>
@@ -1038,6 +1118,11 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>9</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>灯条高度比最小值0.00</string>
                        </property>
@@ -1102,8 +1187,16 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>装甲角度最小值0.0</string>
+                       </property>
+                       <property name="textFormat">
+                        <enum>Qt::AutoText</enum>
                        </property>
                       </widget>
                      </item>
@@ -1167,6 +1260,11 @@
                          <width>135</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>装甲面积最小值</string>
@@ -1234,6 +1332,11 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>装甲面积最大值</string>
                        </property>
@@ -1299,6 +1402,11 @@
                          <width>135</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>小装甲长宽比最小值0.00</string>
@@ -1366,6 +1474,11 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>小装甲长宽比最大值0.00</string>
                        </property>
@@ -1431,6 +1544,11 @@
                          <width>135</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>大装甲长宽比最小值0.00</string>
@@ -1498,6 +1616,11 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>大装甲长宽比最大值0.00</string>
                        </property>
@@ -1564,6 +1687,11 @@
                          <height>16777215</height>
                         </size>
                        </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
+                       </property>
                        <property name="text">
                         <string>小装甲距离参数0.00</string>
                        </property>
@@ -1629,6 +1757,11 @@
                          <width>135</width>
                          <height>16777215</height>
                         </size>
+                       </property>
+                       <property name="font">
+                        <font>
+                         <pointsize>12</pointsize>
+                        </font>
                        </property>
                        <property name="text">
                         <string>大装甲距离参数0.00</string>

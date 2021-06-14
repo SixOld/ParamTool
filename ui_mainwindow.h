@@ -1,13 +1,13 @@
 /********************************************************************************
-** Form generated from reading UI file 'mainwindowhgourC.ui'
+** Form generated from reading UI file 'mainwindowtqmAHx.ui'
 **
 ** Created by: Qt User Interface Compiler version 5.12.10
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
 
-#ifndef MAINWINDOWHGOURC_H
-#define MAINWINDOWHGOURC_H
+#ifndef MAINWINDOWTQMAHX_H
+#define MAINWINDOWTQMAHX_H
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
@@ -274,6 +274,9 @@ public:
         horizontalLayout_7->setObjectName(QString::fromUtf8("horizontalLayout_7"));
         label_3 = new QLabel(tabWidgetPageColor);
         label_3->setObjectName(QString::fromUtf8("label_3"));
+        QFont font;
+        font.setPixelSize(12);
+        label_3->setFont(font);
 
         horizontalLayout_7->addWidget(label_3);
 
@@ -301,6 +304,7 @@ public:
         horizontalLayout_8->setObjectName(QString::fromUtf8("horizontalLayout_8"));
         label_4 = new QLabel(tabWidgetPageColor);
         label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setFont(font);
 
         horizontalLayout_8->addWidget(label_4);
 
@@ -328,6 +332,7 @@ public:
         horizontalLayout_9->setObjectName(QString::fromUtf8("horizontalLayout_9"));
         label_5 = new QLabel(tabWidgetPageColor);
         label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setFont(font);
 
         horizontalLayout_9->addWidget(label_5);
 
@@ -355,6 +360,7 @@ public:
         horizontalLayout_10->setObjectName(QString::fromUtf8("horizontalLayout_10"));
         label_6 = new QLabel(tabWidgetPageColor);
         label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setFont(font);
 
         horizontalLayout_10->addWidget(label_6);
 
@@ -382,6 +388,7 @@ public:
         horizontalLayout_11->setObjectName(QString::fromUtf8("horizontalLayout_11"));
         label_7 = new QLabel(tabWidgetPageColor);
         label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setFont(font);
 
         horizontalLayout_11->addWidget(label_7);
 
@@ -409,6 +416,7 @@ public:
         horizontalLayout_12->setObjectName(QString::fromUtf8("horizontalLayout_12"));
         label_8 = new QLabel(tabWidgetPageColor);
         label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setFont(font);
 
         horizontalLayout_12->addWidget(label_8);
 
@@ -436,6 +444,7 @@ public:
         horizontalLayout_13->setObjectName(QString::fromUtf8("horizontalLayout_13"));
         label_9 = new QLabel(tabWidgetPageColor);
         label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setFont(font);
 
         horizontalLayout_13->addWidget(label_9);
 
@@ -471,6 +480,9 @@ public:
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setMinimumSize(QSize(120, 0));
         label_10->setMaximumSize(QSize(120, 16777215));
+        QFont font1;
+        font1.setPixelSize(12);
+        label_10->setFont(font1);
 
         horizontalLayout_14->addWidget(label_10);
 
@@ -505,6 +517,7 @@ public:
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setMinimumSize(QSize(120, 0));
         label_11->setMaximumSize(QSize(120, 16777215));
+        label_11->setFont(font1);
 
         horizontalLayout_15->addWidget(label_11);
 
@@ -539,6 +552,7 @@ public:
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setMinimumSize(QSize(120, 0));
         label_12->setMaximumSize(QSize(120, 16777215));
+        label_12->setFont(font1);
 
         horizontalLayout_16->addWidget(label_12);
 
@@ -573,6 +587,7 @@ public:
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setMinimumSize(QSize(120, 0));
         label_13->setMaximumSize(QSize(120, 16777215));
+        label_13->setFont(font1);
 
         horizontalLayout_17->addWidget(label_13);
 
@@ -607,6 +622,7 @@ public:
         label_14->setObjectName(QString::fromUtf8("label_14"));
         label_14->setMinimumSize(QSize(120, 0));
         label_14->setMaximumSize(QSize(120, 16777215));
+        label_14->setFont(font1);
 
         horizontalLayout_18->addWidget(label_14);
 
@@ -641,6 +657,7 @@ public:
         label_15->setObjectName(QString::fromUtf8("label_15"));
         label_15->setMinimumSize(QSize(120, 0));
         label_15->setMaximumSize(QSize(120, 16777215));
+        label_15->setFont(font1);
 
         horizontalLayout_19->addWidget(label_15);
 
@@ -675,6 +692,7 @@ public:
         label_16->setObjectName(QString::fromUtf8("label_16"));
         label_16->setMinimumSize(QSize(120, 0));
         label_16->setMaximumSize(QSize(120, 16777215));
+        label_16->setFont(font1);
 
         horizontalLayout_20->addWidget(label_16);
 
@@ -709,6 +727,7 @@ public:
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setMinimumSize(QSize(120, 0));
         label_17->setMaximumSize(QSize(120, 16777215));
+        label_17->setFont(font1);
 
         horizontalLayout_21->addWidget(label_17);
 
@@ -743,6 +762,7 @@ public:
         label_18->setObjectName(QString::fromUtf8("label_18"));
         label_18->setMinimumSize(QSize(120, 0));
         label_18->setMaximumSize(QSize(120, 16777215));
+        label_18->setFont(font1);
 
         horizontalLayout_22->addWidget(label_18);
 
@@ -777,6 +797,7 @@ public:
         label_19->setObjectName(QString::fromUtf8("label_19"));
         label_19->setMinimumSize(QSize(120, 0));
         label_19->setMaximumSize(QSize(120, 16777215));
+        label_19->setFont(font1);
 
         horizontalLayout_23->addWidget(label_19);
 
@@ -817,6 +838,8 @@ public:
         label_32->setObjectName(QString::fromUtf8("label_32"));
         label_32->setMinimumSize(QSize(135, 0));
         label_32->setMaximumSize(QSize(135, 16777215));
+        label_32->setFont(font);
+        label_32->setTextFormat(Qt::AutoText);
 
         horizontalLayout_36->addWidget(label_32);
 
@@ -851,6 +874,7 @@ public:
         label_22->setObjectName(QString::fromUtf8("label_22"));
         label_22->setMinimumSize(QSize(135, 0));
         label_22->setMaximumSize(QSize(135, 16777215));
+        label_22->setFont(font);
 
         horizontalLayout_26->addWidget(label_22);
 
@@ -885,6 +909,7 @@ public:
         label_31->setObjectName(QString::fromUtf8("label_31"));
         label_31->setMinimumSize(QSize(135, 0));
         label_31->setMaximumSize(QSize(135, 16777215));
+        label_31->setFont(font);
 
         horizontalLayout_35->addWidget(label_31);
 
@@ -919,6 +944,7 @@ public:
         label_25->setObjectName(QString::fromUtf8("label_25"));
         label_25->setMinimumSize(QSize(135, 0));
         label_25->setMaximumSize(QSize(135, 16777215));
+        label_25->setFont(font);
 
         horizontalLayout_29->addWidget(label_25);
 
@@ -953,6 +979,7 @@ public:
         label_26->setObjectName(QString::fromUtf8("label_26"));
         label_26->setMinimumSize(QSize(135, 0));
         label_26->setMaximumSize(QSize(135, 16777215));
+        label_26->setFont(font);
 
         horizontalLayout_30->addWidget(label_26);
 
@@ -987,6 +1014,7 @@ public:
         label_27->setObjectName(QString::fromUtf8("label_27"));
         label_27->setMinimumSize(QSize(135, 0));
         label_27->setMaximumSize(QSize(135, 16777215));
+        label_27->setFont(font);
 
         horizontalLayout_31->addWidget(label_27);
 
@@ -1021,6 +1049,7 @@ public:
         label_28->setObjectName(QString::fromUtf8("label_28"));
         label_28->setMinimumSize(QSize(135, 0));
         label_28->setMaximumSize(QSize(135, 16777215));
+        label_28->setFont(font);
 
         horizontalLayout_32->addWidget(label_28);
 
@@ -1055,6 +1084,7 @@ public:
         label_29->setObjectName(QString::fromUtf8("label_29"));
         label_29->setMinimumSize(QSize(135, 0));
         label_29->setMaximumSize(QSize(135, 16777215));
+        label_29->setFont(font);
 
         horizontalLayout_33->addWidget(label_29);
 
@@ -1089,6 +1119,7 @@ public:
         label_30->setObjectName(QString::fromUtf8("label_30"));
         label_30->setMinimumSize(QSize(135, 0));
         label_30->setMaximumSize(QSize(135, 16777215));
+        label_30->setFont(font);
 
         horizontalLayout_34->addWidget(label_30);
 
@@ -1290,4 +1321,4 @@ namespace Ui {
 
 QT_END_NAMESPACE
 
-#endif // MAINWINDOWHGOURC_H
+#endif // MAINWINDOWTQMAHX_H
