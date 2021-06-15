@@ -127,8 +127,31 @@ void MainWindow::getSocketDataShow(QString data)
 void MainWindow::getSocketImageShow(char* data, int length)
 {
     imageMutex.lock();
+#if 0
     imageEncode.clear();
     imageEncode.insert(imageEncode.end(), data, data + length);
+#else
+    if (data[0] == 0xaa && data[1] == imageCount)
+    {
+        std::vector<uchar> tmpData;
+        tmpData.insert(tmpData.end(), data + 2, data + length);
+        imageEncodeTmp.push_back(tmpData);
+        if (imageCount == 31)
+        {
+            imageEncode.clear();
+            imageEncode.swap(imageEncodeTmp);
+            imageCount = 0;
+        }
+        else
+        {
+            imageCount++;
+        }
+    }
+    else
+    {
+        imageCount = 0;
+    }
+#endif
     imageMutex.unlock();
 }
 
@@ -161,6 +184,7 @@ void MainWindow::handleTimeout()
         count = 0;
     }
     imageMutex.lock();
+#if 0
     if (imageEncode.size() != 0)
     {
         cv::Mat img_decode = cv::imdecode(imageEncode, CV_LOAD_IMAGE_COLOR);
@@ -170,6 +194,40 @@ void MainWindow::handleTimeout()
         ui->Image_frame->setPixmap(QPixmap::fromImage(Qtemp));
         ui->Image_frame->show();
     }
+#else
+    #if 0
+    /* 编码 */
+    void splitImage(cv::Mat image, int num)
+    {
+        int rows = image.rows;
+        for (size_t ki = 0; ki < num; ki++)
+        {
+            int star = rows / num * ki;
+            int end = rows / num * (ki + 1);
+            if (ki == num - 1) {
+                end = rows;
+            }
+            cv::Mat b = image.rowRange(star, end);
+            /* 此处进行编码然后udp发送 */
+        }
+    }
+    #endif
+    /* 解码 */
+    if (imageEncode.size() == 32)
+    {
+        cv::Mat img_decode;
+        for (size_t ki = 0; ki < imageEncode.size(); ki++)
+        {
+            cv::Mat tmpImage = cv::imdecode(imageEncode.at(ki), CV_LOAD_IMAGE_COLOR);
+            cv::vconcat(img_decode, tmpImage, img_decode);
+        }
+        cv::cvtColor(img_decode, img_decode, CV_BGR2RGB);//BGR convert to RGB
+        cv::resize(img_decode, img_decode, cv::Size(ui->Image_frame->width(), ui->Image_frame->height()), 0, 0, cv::INTER_NEAREST);
+        QImage Qtemp = QImage((const unsigned char*)(img_decode.data), img_decode.cols, img_decode.rows, img_decode.step, QImage::Format_RGB888);
+        ui->Image_frame->setPixmap(QPixmap::fromImage(Qtemp));
+        ui->Image_frame->show();
+    }
+#endif
     imageMutex.unlock();
 
     binaryMutex.lock();

@@ -48,7 +48,13 @@ private:
     QMutex imageMutex;
     QMutex binaryMutex;
     QString debugInfo;
+#if 0
     std::vector<uchar> imageEncode;
+#else    
     std::vector<uchar> binaryEncode;
+    uint8_t imageCount;
+    std::vector<std::vector<uchar>> imageEncode;
+    std::vector<std::vector<uchar>> imageEncodeTmp;
+#endif
 };
 #endif // MAINWINDOW_H
