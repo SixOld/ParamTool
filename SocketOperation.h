@@ -9,8 +9,9 @@
 #define UDP_DEBUG_PORT	7788
 #define UDP_IMAGE_PORT	8899
 #define UDP_BINARY_PORT	9900
-#define UDP_RECV_IP		"192.0.0.128"
-
+#define UDP_RECV_IP		"127.0.0.1"
+#define UDP_IMAGE_SPLIT_SIZE	8
+#define UDP_BINARY_SPLIT_SIZE	2
 enum
 {
 	/* ÑÕÉ« */

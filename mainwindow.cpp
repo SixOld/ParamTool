@@ -35,6 +35,10 @@ MainWindow::MainWindow(QWidget *parent)
 
 MainWindow::~MainWindow()
 {
+    if (ui->pushButton->text() == "断开")
+    {
+        on_pushButton_clicked();
+    }
     m_param.SetConfig();
     delete mp_imageTimer;
     delete ui;
@@ -102,7 +106,7 @@ void MainWindow::on_lineEdit_send_returnPressed()
         sendData.HeadStart = 0xaa;
         sendData.HeadEnd = 0xbb;
         sendData.Length = sizeof(sendData);
-        sendData.Cmd = TCP_GET_COLOR;
+        sendData.Cmd = TCP_SET_COLOR;
         m_socket.SendData(sendData);
         changeStatusOfUI(true);
     }
@@ -127,16 +131,13 @@ void MainWindow::getSocketDataShow(QString data)
 void MainWindow::getSocketImageShow(char* data, int length)
 {
     imageMutex.lock();
-#if 0
-    imageEncode.clear();
-    imageEncode.insert(imageEncode.end(), data, data + length);
-#else
-    if (data[0] == 0xaa && data[1] == imageCount)
+
+    if (data[0] == '?' && data[1] == imageCount)
     {
         std::vector<uchar> tmpData;
         tmpData.insert(tmpData.end(), data + 2, data + length);
         imageEncodeTmp.push_back(tmpData);
-        if (imageCount == 31)
+        if (imageCount == UDP_IMAGE_SPLIT_SIZE - 1)
         {
             imageEncode.clear();
             imageEncode.swap(imageEncodeTmp);
@@ -151,16 +152,34 @@ void MainWindow::getSocketImageShow(char* data, int length)
     {
         imageCount = 0;
     }
-#endif
     imageMutex.unlock();
 }
 
 void MainWindow::getSocketBinaryShow(char* data, int length)
 {
-    imageMutex.lock();
-    binaryEncode.clear();
-    binaryEncode.insert(binaryEncode.end(), data, data + length);
-    imageMutex.unlock();
+    binaryMutex.lock();
+
+    if (data[0] == '?' && data[1] == binaryCount)
+    {
+        std::vector<uchar> tmpData;
+        tmpData.insert(tmpData.end(), data + 2, data + length);
+        binaryEncodeTmp.push_back(tmpData);
+        if (binaryCount == UDP_BINARY_SPLIT_SIZE - 1)
+        {
+            binaryEncode.clear();
+            binaryEncode.swap(binaryEncodeTmp);
+            binaryCount = 0;
+        }
+        else
+        {
+            binaryCount++;
+        }
+    }
+    else
+    {
+        binaryCount = 0;
+    }
+    binaryMutex.unlock();
 }
 
 void MainWindow::changeStatusOfUI(bool value)
@@ -171,6 +190,7 @@ void MainWindow::changeStatusOfUI(bool value)
 void MainWindow::handleTimeout()
 {
     static int count;
+
     if (m_socket.Recvicing)
     {
         if (count++ < 50)
@@ -184,61 +204,54 @@ void MainWindow::handleTimeout()
         count = 0;
     }
     imageMutex.lock();
-#if 0
-    if (imageEncode.size() != 0)
-    {
-        cv::Mat img_decode = cv::imdecode(imageEncode, CV_LOAD_IMAGE_COLOR);
-        cv::cvtColor(img_decode, img_decode, CV_BGR2RGB);//BGR convert to RGB
-        cv::resize(img_decode, img_decode, cv::Size(ui->Image_frame->width(), ui->Image_frame->height()), 0, 0, cv::INTER_NEAREST);
-        QImage Qtemp = QImage((const unsigned char*)(img_decode.data), img_decode.cols, img_decode.rows, img_decode.step, QImage::Format_RGB888);
-        ui->Image_frame->setPixmap(QPixmap::fromImage(Qtemp));
-        ui->Image_frame->show();
-    }
-#else
-    #if 0
-    /* 编码 */
-    void splitImage(cv::Mat image, int num)
-    {
-        int rows = image.rows;
-        for (size_t ki = 0; ki < num; ki++)
-        {
-            int star = rows / num * ki;
-            int end = rows / num * (ki + 1);
-            if (ki == num - 1) {
-                end = rows;
-            }
-            cv::Mat b = image.rowRange(star, end);
-            /* 此处进行编码然后udp发送 */
-        }
-    }
-    #endif
+
     /* 解码 */
-    if (imageEncode.size() == 32)
+    if (imageEncode.size() == UDP_IMAGE_SPLIT_SIZE)
     {
         cv::Mat img_decode;
         for (size_t ki = 0; ki < imageEncode.size(); ki++)
         {
             cv::Mat tmpImage = cv::imdecode(imageEncode.at(ki), CV_LOAD_IMAGE_COLOR);
-            cv::vconcat(img_decode, tmpImage, img_decode);
+            if (ki == 0)
+            {
+                img_decode = tmpImage;
+            }
+            else
+            {
+                cv::vconcat(img_decode, tmpImage, img_decode);
+            }
         }
         cv::cvtColor(img_decode, img_decode, CV_BGR2RGB);//BGR convert to RGB
         cv::resize(img_decode, img_decode, cv::Size(ui->Image_frame->width(), ui->Image_frame->height()), 0, 0, cv::INTER_NEAREST);
         QImage Qtemp = QImage((const unsigned char*)(img_decode.data), img_decode.cols, img_decode.rows, img_decode.step, QImage::Format_RGB888);
         ui->Image_frame->setPixmap(QPixmap::fromImage(Qtemp));
         ui->Image_frame->show();
+        imageEncode.clear();
     }
-#endif
     imageMutex.unlock();
-
     binaryMutex.lock();
-    if (binaryEncode.size() != 0)
+
+    if (binaryEncode.size() == UDP_BINARY_SPLIT_SIZE)
     {
-        cv::Mat img_decode = cv::imdecode(binaryEncode, CV_LOAD_IMAGE_COLOR);
+        cv::Mat img_decode;
+        for (size_t ki = 0; ki < binaryEncode.size(); ki++)
+        {
+            cv::Mat tmpbinary = cv::imdecode(binaryEncode.at(ki), CV_LOAD_IMAGE_COLOR);
+            if (ki == 0)
+            {
+                img_decode = tmpbinary;
+            }
+            else
+            {
+                cv::vconcat(img_decode, tmpbinary, img_decode);
+            }
+        }
         cv::cvtColor(img_decode, img_decode, CV_BGR2RGB);//BGR convert to RGB
         cv::resize(img_decode, img_decode, cv::Size(ui->Image_binary->width(), ui->Image_binary->height()), 0, 0, cv::INTER_NEAREST);
         QImage Qtemp = QImage((const unsigned char*)(img_decode.data), img_decode.cols, img_decode.rows, img_decode.step, QImage::Format_RGB888);
         ui->Image_binary->setPixmap(QPixmap::fromImage(Qtemp));
         ui->Image_binary->show();
+        binaryEncode.clear();
     }
     binaryMutex.unlock();
 }
